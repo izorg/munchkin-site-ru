@@ -7,12 +7,13 @@ import { BodyContainer } from 'phenomic';
 
 import cn from './style.css';
 
-import Loading from '../../components/Loading/index';
+import Badge from '../../components/Badge';
+import Loading from '../../components/Loading';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
 import { HeadShape } from '../../shapes';
 import { getMessages } from '../../i18n';
 
-const Homepage = ({ body, children, head, isLoading }) => (
+const Homepage = ({ body, head, isLoading }) => (
   <IntlProvider locale={head.lang} messages={getMessages(head.lang)}>
     <div>
       <Helmet>
@@ -41,7 +42,9 @@ const Homepage = ({ body, children, head, isLoading }) => (
           style={{ marginTop: 24 }}
         />
 
-        {children}
+        <p>
+          <Badge />
+        </p>
       </div>
     </div>
   </IntlProvider>
@@ -49,14 +52,12 @@ const Homepage = ({ body, children, head, isLoading }) => (
 
 Homepage.propTypes = {
   body: PropTypes.string,
-  children: PropTypes.node,
   head: HeadShape.isRequired,
   isLoading: PropTypes.bool,
 };
 
 Homepage.defaultProps = {
   body: '',
-  children: null,
   isLoading: false,
 };
 
