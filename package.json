@@ -4,6 +4,9 @@
   "repository": "https://github.com/izorg/munchkin-site",
   "scripts": {
     "build": "phenomic build",
+    "i18n:download": "node scripts/i18n/download.js",
+    "i18n:translate": "node scripts/i18n/translate.js",
+    "i18n:upload": "node scripts/i18n/upload.js",
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:js": "eslint --ignore-path .gitignore --fix .",
@@ -64,5 +67,8 @@
     "warning": "3.0.0",
     "webpack": "2.6.1",
     "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "axios": "0.16.2"
   }
 }
