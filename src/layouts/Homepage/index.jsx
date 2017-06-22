@@ -35,10 +35,9 @@ const Homepage = ({ body, head, isLoading }) => (
         </div>
 
         <RaisedButton
-          href="https://web.allmunchkins.com"
+          href={head.link}
           label={<FormattedMessage id="homepage.try" defaultMessage="Try" />}
           primary
-          rel="noopener noreferrer"
           style={{ marginTop: 24 }}
         />
 
