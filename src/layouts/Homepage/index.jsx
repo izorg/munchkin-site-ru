@@ -8,6 +8,7 @@ import { BodyContainer } from 'phenomic';
 import cn from './style.css';
 
 import Badge from '../../components/Badge';
+import Gallery from '../../components/Gallery';
 import Loading from '../../components/Loading';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
 import { HeadShape } from '../../shapes';
@@ -44,6 +45,8 @@ const Homepage = ({ body, head, isLoading }) => (
         <p>
           <Badge />
         </p>
+
+        <Gallery lang={head.lang} />
       </div>
     </div>
   </IntlProvider>
