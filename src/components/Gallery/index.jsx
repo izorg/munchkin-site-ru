@@ -26,6 +26,7 @@ const Gallery = ({ lang }) => {
         <a
           className={cn.item}
           data-flickr-embed="true"
+          key={originalImage}
           href={originalImage}
           title={title}
         >

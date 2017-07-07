@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Munchkin';
   src:
-    url('../../fonts/munchkin.woff2') format('woff2'),
-    url('../../fonts/munchkin.woff') format('woff');
+    url('../../../content/assets/fonts/munchkin.woff2') format('woff2'),
+    url('../../../content/assets/fonts/munchkin.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
