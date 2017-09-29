@@ -1,5 +1,4 @@
 import 'react-hot-loader/patch';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import 'whatwg-fetch';
 import phenomicClient from 'phenomic/lib/client';
 import mdHotUpdater from 'phenomic/lib/client/hot-md';
@@ -7,8 +6,6 @@ import mdHotUpdater from 'phenomic/lib/client/hot-md';
 import metadata from '../src/metadata';
 import routes from '../src/routes';
 import store from '../src/store';
-
-injectTapEventPlugin();
 
 phenomicClient({ metadata, routes, store });
 
