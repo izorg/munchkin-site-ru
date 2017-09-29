@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import PropTypes from 'prop-types';
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/Button';
 import { BodyContainer } from 'phenomic';
 
 import cn from './style.css';
@@ -36,11 +36,13 @@ const Homepage = ({ body, head, isLoading }) => (
         </div>
 
         <RaisedButton
+          color="primary"
           href={head.link}
-          label={<FormattedMessage id="homepage.try" defaultMessage="Try" />}
-          primary
+          raised
           style={{ marginTop: 24 }}
-        />
+        >
+          <FormattedMessage id="homepage.try" defaultMessage="Try" />
+        </RaisedButton>
 
         <p>
           <Badge />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FlatButton from 'material-ui/FlatButton';
+import FlatButton from 'material-ui/Button';
 import { browserHistory } from 'phenomic/lib/client';
 
 class Item extends Component {

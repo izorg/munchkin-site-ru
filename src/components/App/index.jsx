@@ -5,7 +5,6 @@ import { addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 import PropTypes from 'prop-types';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import 'normalize.css';
@@ -16,7 +15,7 @@ import munchkinTheme from '../../styles/munchkinTheme';
 addLocaleData([...en, ...ru]);
 
 const App = props => (
-  <MuiThemeProvider muiTheme={getMuiTheme(munchkinTheme)}>
+  <MuiThemeProvider theme={munchkinTheme}>
     <div>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
