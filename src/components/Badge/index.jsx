@@ -1,7 +1,14 @@
 import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import { withStyles } from 'material-ui/styles';
 
-import cn from './style.css';
+import { classesObject } from '../../utils/propTypes';
+
+const styles = {
+  logoImage: {
+    width: 240,
+  },
+};
 
 const messages = defineMessages({
   alt: {
@@ -14,18 +21,19 @@ const messages = defineMessages({
   },
 });
 
-const Badge = ({ intl }) => (
+const Badge = ({ classes, intl }) => (
   <a href="https://play.google.com/store/apps/details?id=com.izorg.munchkin">
     <img
       alt={intl.formatMessage(messages.alt)}
-      className={cn.logoImage}
+      className={classes.logoImage}
       src={intl.formatMessage(messages.src)}
     />
   </a>
 );
 
 Badge.propTypes = {
+  classes: classesObject.isRequired,
   intl: intlShape.isRequired,
 };
 
-export default injectIntl(Badge);
+export default injectIntl(withStyles(styles)(Badge));

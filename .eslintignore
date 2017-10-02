@@ -1,2 +1,4 @@
-dist/*
-scripts/*
+/.cache/
+/public/
+/scripts/
+

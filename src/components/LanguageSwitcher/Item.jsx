@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import FlatButton from 'material-ui/Button';
-import { browserHistory } from 'phenomic/lib/client';
+import React from 'react';
+import { matchPath } from 'react-router-dom';
+import Link from 'gatsby-link';
+import Button from 'material-ui/Button';
 
-class Item extends Component {
-  componentWillMount() {
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    browserHistory.push(this.props.href);
-  }
-
-  render() {
-    return (
-      <FlatButton {...this.props} onClick={this.handleClick} style={{ minWidth: 36 }} />
-    );
-  }
-}
-
-Item.propTypes = {
-  href: PropTypes.string.isRequired,
-};
-
-export default Item;
+// eslint-disable-next-line react/prop-types
+export default ({ location, to, ...props }) => (
+  <Button
+    {...props}
+    component={Link}
+    dense
+    disabled={!!matchPath(location.pathname, { exact: true, path: to })}
+    to={to}
+  />
+);

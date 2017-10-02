@@ -1,13 +1,14 @@
+/* eslint-disable no-console */
 const fs = require('fs');
 
 const api = require('../smartcat');
 
-api.getDocuments().then(function (documents) {
-  documents.forEach(function (document) {
-    api.exportDocument(document).then(function (task) {
-      api.getTranslation(task.id, document.targetLanguage).then(function (translation) {
+api.getDocuments().then((documents) => {
+  documents.forEach((document) => {
+    api.exportDocument(document).then((task) => {
+      api.getTranslation(task.id, document.targetLanguage).then((translation) => {
         console.log('translation', translation);
-        fs.writeFileSync('./languages/' + document.targetLanguage + '.json', translation);
+        fs.writeFileSync(`./languages/${document.targetLanguage}.json`, translation);
       });
     });
   });
