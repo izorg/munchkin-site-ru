@@ -39,7 +39,13 @@ const Page = ({ classes }) => (
     </Typography>
 
     <div className={classes.buttonContainer}>
-      <Button raised color="primary">Try</Button>
+      <Button
+        color="primary"
+        href="https://web.allmunchkins.com"
+        raised
+      >
+        Try
+      </Button>
     </div>
 
     <Typography align="center" gutterBottom>
