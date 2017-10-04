@@ -1,5 +1,8 @@
 {
   "badge.alt": "Доступно в Google Play",
   "badge.src": "https://play.google.com/intl/en_us/badges/images/generic/ru_badge_web_generic.png",
-  "homepage.try": "Попробовать"
+  "home.description": "Простой и удобный счётчик уровней для игры в Манчкин",
+  "home.link": "https://web.allmunchkins.com/ru.html",
+  "home.title": "Все манчкины",
+  "home.try": "Попробовать"
 }
