@@ -1,6 +1,8 @@
 /.cache/
 /.idea/
 /config.json
+/languages/de.json
+/languages/uk.json
 /messages/
 /node_modules/
 /public/

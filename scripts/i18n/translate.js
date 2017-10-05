@@ -1,6 +1,6 @@
 const fs = require('fs');
-const globSync = require('glob').sync;
-const mkdirpSync = require('mkdirp').sync;
+const globSync = require('glob').sync; // eslint-disable-line import/no-extraneous-dependencies
+const mkdirpSync = require('mkdirp').sync; // eslint-disable-line import/no-extraneous-dependencies
 
 const MESSAGES_PATTERN = './messages/**/*.json';
 const LANG_DIR = './languages/';
@@ -14,10 +14,12 @@ const defaultMessages = globSync(MESSAGES_PATTERN)
   .map(file => JSON.parse(file))
   .reduce((collection, descriptors) => {
     descriptors.forEach(({ id, defaultMessage }) => {
+      // eslint-disable-next-line no-prototype-builtins
       if (collection.hasOwnProperty(id)) {
         throw new Error(`Duplicate message id: ${id}`);
       }
 
+      // eslint-disable-next-line no-param-reassign
       collection[id] = defaultMessage;
     });
 
