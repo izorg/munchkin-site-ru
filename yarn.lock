@@ -2603,17 +2603,17 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-airbnb-base@^11.3.0:
-  version "11.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-11.3.2.tgz#8703b11abe3c88ac7ec2b745b7fdf52e00ae680a"
+eslint-config-airbnb-base@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
   dependencies:
     eslint-restricted-globals "^0.1.1"
 
-eslint-config-airbnb@15.1.0:
-  version "15.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-15.1.0.tgz#fd432965a906e30139001ba830f58f73aeddae8e"
+eslint-config-airbnb@16.1.0:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
   dependencies:
-    eslint-config-airbnb-base "^11.3.0"
+    eslint-config-airbnb-base "^12.1.0"
 
 eslint-import-resolver-node@^0.3.1:
   version "0.3.1"
@@ -2629,9 +2629,9 @@ eslint-module-utils@^2.1.1:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-import@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.7.0.tgz#21de33380b9efb55f5ef6d2e210ec0e07e7fa69f"
+eslint-plugin-import@2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.8.0.tgz#fa1b6ef31fcb3c501c09859c1b86f1fc5b986894"
   dependencies:
     builtin-modules "^1.1.1"
     contains-path "^0.1.0"
@@ -2644,9 +2644,9 @@ eslint-plugin-import@2.7.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-jsx-a11y@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-5.1.1.tgz#5c96bb5186ca14e94db1095ff59b3e2bd94069b1"
+eslint-plugin-jsx-a11y@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.0.2.tgz#659277a758b036c305a7e4a13057c301cd3be73f"
   dependencies:
     aria-query "^0.7.0"
     array-includes "^3.0.3"
@@ -2676,9 +2676,9 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.8.0.tgz#229ef0e354e0e61d837c7a80fdfba825e199815e"
+eslint@4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.9.0.tgz#76879d274068261b191fe0f2f56c74c2f4208e8b"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
@@ -3292,9 +3292,9 @@ gatsby-cli@^1.1.10:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@1.6.21:
-  version "1.6.21"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.21.tgz#7cdbb533f41b80db548cf0cbda4725789facd2f7"
+gatsby-link@1.6.22:
+  version "1.6.22"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.22.tgz#bc117ccc09b75361279d20439046560134342ce5"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -3307,9 +3307,9 @@ gatsby-module-loader@^1.0.7:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-google-analytics@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.8.tgz#ce5e47fffda152f8ea02d008f77dfbff9654c7b6"
+gatsby-plugin-google-analytics@1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.10.tgz#b8532f0a9d788f4e042aa9995de6a35dbd314277"
   dependencies:
     babel-runtime "^6.26.0"
 
@@ -3321,9 +3321,9 @@ gatsby-plugin-material-ui@0.1.3:
     material-ui "^1.0.0-beta.9"
     react-jss "^7.0.2"
 
-gatsby-plugin-react-helmet@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-1.0.6.tgz#32431fbfd072b05453080ed304142f4747868848"
+gatsby-plugin-react-helmet@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-1.0.8.tgz#1adf87229cd54f11c95bb16b25e3cc5f20fee871"
   dependencies:
     babel-runtime "^6.26.0"
     react-helmet "^5.1.3"
@@ -3345,9 +3345,9 @@ gatsby-react-router-scroll@^1.0.2:
     scroll-behavior "^0.9.1"
     warning "^3.0.0"
 
-gatsby@1.9.61:
-  version "1.9.61"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.61.tgz#1c4718a5d1580d70f6969b2d6c18f9a01cc42ef5"
+gatsby@1.9.73:
+  version "1.9.73"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.73.tgz#68758c7198874b30a48fbacf5560568f9e373d89"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"

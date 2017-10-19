@@ -32,8 +32,8 @@ const Badge = ({ classes, intl }) => (
 );
 
 Badge.propTypes = {
-  classes: classesObject.isRequired,
-  intl: intlShape.isRequired,
+  classes: classesObject.isRequired, // eslint-disable-line react/no-typos
+  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
 export default injectIntl(withStyles(styles)(Badge));
