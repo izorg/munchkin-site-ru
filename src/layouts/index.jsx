@@ -38,7 +38,7 @@ const Layout = ({ children, classes, location }) => {
   const locale = location.pathname.indexOf('/ru/') === 0 ? 'ru' : 'en';
 
   return (
-    <MuiThemeProvider theme={munchkinTheme}>
+    <MuiThemeProvider sheetsManager={new Map()} theme={munchkinTheme}>
       <IntlProvider locale={locale} messages={getMessages(locale)}>
         <div>
           <Helmet>
