@@ -59,7 +59,7 @@ const Home = ({ classes, intl }) => (
     </Typography>
 
     <Typography align="center" gutterBottom>
-      {intl.formatMessage(messages.title)}
+      {intl.formatMessage(messages.description)}
     </Typography>
 
     <div className={classes.buttonContainer}>
