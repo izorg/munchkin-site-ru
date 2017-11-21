@@ -6,7 +6,12 @@ module.exports = {
         trackingId: 'UA-11062557-8',
       },
     },
-    'gatsby-plugin-jss',
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      options: {
+        pathToTheme: 'src/styles/munchkinTheme.js',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',
   ],
