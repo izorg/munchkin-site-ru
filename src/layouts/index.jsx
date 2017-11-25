@@ -16,6 +16,8 @@ import munchkinTheme from '../styles/munchkinTheme';
 
 addLocaleData([...en, ...ru]);
 
+const Fragment = ({ children }) => children;
+
 const styles = {
   '@global': {
     '@font-face': {
@@ -25,6 +27,11 @@ const styles = {
         url(${munchkinWoff}) format('woff')`,
       fontWeight: 'normal',
       fontStyle: 'normal',
+    },
+
+    html: {
+      '-moz-osx-font-smoothing': 'grayscale',
+      '-webkit-font-smoothing': 'antialiased',
     },
   },
 
@@ -39,7 +46,7 @@ const Layout = ({ children, classes, location }) => {
 
   return (
     <MuiThemeProvider theme={munchkinTheme}>
-      <IntlProvider locale={locale} messages={getMessages(locale)}>
+      <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={Fragment}>
         <div>
           <Helmet>
             <html lang={locale} />

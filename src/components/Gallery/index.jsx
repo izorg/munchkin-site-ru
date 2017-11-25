@@ -39,20 +39,20 @@ const Gallery = ({ classes, lang }) => {
 
   return (
     <div className={classes.gallery}>
-      {data.map(({ originalImage, thumbnailImage, title }) => (
+      {data.map(({ image, title }) => (
         <a
           className={classes.item}
           data-flickr-embed="true"
-          key={originalImage}
-          href={originalImage}
+          key={image}
+          href={image}
           title={title}
         >
           <img
             alt={title}
             className={classes.image}
-            height="500"
-            src={thumbnailImage}
-            width="317"
+            height="567"
+            src={image}
+            width="360"
           />
         </a>
       ))}

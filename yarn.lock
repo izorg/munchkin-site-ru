@@ -3312,9 +3312,9 @@ gatsby-1-config-css-modules@^1.0.6:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.22:
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.22.tgz#5ffef1dda85cde7536d389f333416794ec6a3b01"
+gatsby-cli@^1.1.23:
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.23.tgz#8681aefa6efefe0abfbd3b267c2358c2c1f3d9bd"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -3333,9 +3333,9 @@ gatsby-cli@^1.1.22:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@1.6.22:
-  version "1.6.22"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.22.tgz#bc117ccc09b75361279d20439046560134342ce5"
+gatsby-link@1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.28.tgz#12b799aa12663ae22f626195ab258e0ee5dddc9c"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -3362,12 +3362,11 @@ gatsby-plugin-material-ui@0.1.3:
     material-ui "^1.0.0-beta.9"
     react-jss "^7.0.2"
 
-gatsby-plugin-react-helmet@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-1.0.8.tgz#1adf87229cd54f11c95bb16b25e3cc5f20fee871"
+gatsby-plugin-react-helmet@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.1.tgz#3f83a60ed64b78c4bb2da5523480808516a7fd97"
   dependencies:
     babel-runtime "^6.26.0"
-    react-helmet "^5.1.3"
 
 gatsby-plugin-react-next@1.0.4:
   version "1.0.4"
@@ -3386,9 +3385,9 @@ gatsby-react-router-scroll@^1.0.5:
     scroll-behavior "^0.9.1"
     warning "^3.0.0"
 
-gatsby@1.9.118:
-  version "1.9.118"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.118.tgz#76d94faaa91f0ebe39fd2346f91a26146bff4009"
+gatsby@1.9.119:
+  version "1.9.119"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.119.tgz#753b212330d3391761a0cc5257fe3220fc0a1195"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -3427,7 +3426,7 @@ gatsby@1.9.118:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.6"
-    gatsby-cli "^1.1.22"
+    gatsby-cli "^1.1.23"
     gatsby-module-loader "^1.0.8"
     gatsby-react-router-scroll "^1.0.5"
     glob "^7.1.1"
@@ -6736,7 +6735,7 @@ react-flow-types@0.2.0-beta.3:
   version "0.2.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-flow-types/-/react-flow-types-0.2.0-beta.3.tgz#93e7e3c95a75a1a941de05b9d7287e3ca6871046"
 
-react-helmet@5.2.0, react-helmet@^5.1.3:
+react-helmet@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
   dependencies:
