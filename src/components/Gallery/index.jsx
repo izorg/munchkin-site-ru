@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
 
 import en from './data/en.json';
@@ -13,11 +14,10 @@ const styles = {
   },
 
   item: {
-    margin: 0,
+    display: 'inline-block',
   },
 
   image: {
-    border: '1px solid #000000',
     height: 'auto',
     maxWidth: '100%',
   },
@@ -40,9 +40,9 @@ const Gallery = ({ classes, lang }) => {
   return (
     <div className={classes.gallery}>
       {data.map(({ image, title }) => (
-        <a
+        <Paper
           className={classes.item}
-          data-flickr-embed="true"
+          component="a"
           key={image}
           href={image}
           title={title}
@@ -54,7 +54,7 @@ const Gallery = ({ classes, lang }) => {
             src={image}
             width="360"
           />
-        </a>
+        </Paper>
       ))}
     </div>
   );
