@@ -3,7 +3,9 @@ import brown from 'material-ui/colors/brown';
 
 const theme = {
   palette: {
-    primary: brown,
+    primary: {
+      main: brown[500],
+    },
   },
 
   typography: {
