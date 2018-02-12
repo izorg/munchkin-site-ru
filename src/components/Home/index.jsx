@@ -54,7 +54,7 @@ const Home = ({ classes, intl }) => (
       <title>{intl.formatMessage(messages.title)}</title>
     </Helmet>
 
-    <Typography align="center" className={classes.header} gutterBottom type="display4">
+    <Typography align="center" className={classes.header} gutterBottom variant="display4">
       {intl.formatMessage(messages.title)}
     </Typography>
 
