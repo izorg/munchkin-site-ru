@@ -66,7 +66,7 @@ const Home = ({ classes, intl }) => (
       <Button
         color="primary"
         href={intl.formatMessage(messages.link)}
-        raised
+        variant="raised"
       >
         {intl.formatMessage(messages.try)}
       </Button>
