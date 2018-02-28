@@ -16,7 +16,7 @@ addLocaleData([...en, ...ru]);
 
 const Fragment = ({ children }) => children;
 
-const styles = {
+const styles = theme => ({
   '@global': {
     '@font-face': {
       fontFamily: 'Munchkin',
@@ -31,12 +31,17 @@ const styles = {
       '-moz-osx-font-smoothing': 'grayscale',
       '-webkit-font-smoothing': 'antialiased',
     },
+
+    body: {
+      margin: 0,
+      padding: theme.spacing.unit,
+    },
   },
 
   header: {
     marginBottom: '2em',
   },
-};
+});
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children, classes, location }) => {

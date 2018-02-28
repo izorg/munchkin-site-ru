@@ -6,7 +6,7 @@ import { create } from 'jss';
 import preset from 'jss-preset-default';
 import { createGenerateClassName, MuiThemeProvider } from 'material-ui/styles';
 
-import theme from '../../src/styles/munchkinTheme';
+import theme from './src/styles/munchkinTheme';
 
 exports.replaceRenderer = ({
   bodyComponent,

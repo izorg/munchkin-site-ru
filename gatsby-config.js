@@ -8,6 +8,5 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',
-    'material-ui',
   ],
 };
