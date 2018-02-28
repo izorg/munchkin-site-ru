@@ -8,8 +8,8 @@ export default ({ location, to, ...props }) => (
   <Button
     {...props}
     component={Link}
-    dense
     disabled={!!matchPath(location.pathname, { exact: true, path: to })}
+    size="small"
     to={to}
   />
 );
