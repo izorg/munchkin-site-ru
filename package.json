@@ -3,7 +3,7 @@
   "homepage": "https://allmunchkins.com",
   "repository": "https://github.com/izorg/munchkin-site",
   "scripts": {
-    "build": "gatsby build && cp CNAME public/",
+    "build": "gatsby build",
     "dev": "gatsby develop --host=localhost",
     "i18n:download": "node scripts/i18n/download.js",
     "i18n:translate": "node scripts/i18n/translate.js",
