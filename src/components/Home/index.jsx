@@ -5,14 +5,12 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
-import { classesObject } from '../../utils/propTypes';
-
 import Badge from '../Badge';
 import Gallery from '../Gallery';
 
 const styles = theme => ({
   header: {
-    color: '#000000',
+    color: theme.palette.common.black,
     fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
 
     [theme.breakpoints.down('md')]: {
@@ -81,8 +79,7 @@ const Home = ({ classes, intl }) => (
 );
 
 Home.propTypes = {
-  classes: classesObject.isRequired, // eslint-disable-line react/no-typos
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
+  intl: intlShape.isRequired,
 };
 
 export default injectIntl(withStyles(styles)(Home));

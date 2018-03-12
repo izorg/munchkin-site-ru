@@ -6,8 +6,6 @@ import { withStyles } from 'material-ui/styles';
 import en from './data/en.json';
 import ru from './data/ru.json';
 
-import { classesObject } from '../../utils/propTypes';
-
 const styles = {
   gallery: {
     textAlign: 'center',
@@ -61,7 +59,6 @@ const Gallery = ({ classes, lang }) => {
 };
 
 Gallery.propTypes = {
-  classes: classesObject.isRequired,
   lang: PropTypes.string,
 };
 

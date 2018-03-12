@@ -35,13 +35,13 @@ const styles = theme => ({
   },
 
   header: {
-    marginBottom: '2em',
+    marginBottom: theme.spacing.unit * 4,
   },
 });
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children, classes, location }) => {
-  const locale = location.pathname.indexOf('/ru/') === 0 ? 'ru' : 'en';
+  const locale = location.pathname.startsWith('/ru/') ? 'ru' : 'en';
 
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={Fragment}>

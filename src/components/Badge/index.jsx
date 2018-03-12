@@ -2,8 +2,6 @@ import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 
-import { classesObject } from '../../utils/propTypes';
-
 const styles = {
   logoImage: {
     width: 240,
@@ -32,8 +30,7 @@ const Badge = ({ classes, intl }) => (
 );
 
 Badge.propTypes = {
-  classes: classesObject.isRequired, // eslint-disable-line react/no-typos
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
+  intl: intlShape.isRequired,
 };
 
 export default injectIntl(withStyles(styles)(Badge));

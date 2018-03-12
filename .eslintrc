@@ -10,6 +10,15 @@
       {
         "devDependencies": true
       }
+    ],
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [
+          "classes",
+          "theme"
+        ]
+      }
     ]
   }
 }
