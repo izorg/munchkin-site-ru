@@ -2,7 +2,8 @@ language: node_js
 branches:
   only:
   - master
-install: yarn install
+before_install: npm install -g npm@5.7.1
+install: npm ci
 script:
   - npm run lint
   - npm run build
