@@ -1,5 +1,5 @@
 import React from 'react';
-import { matchPath } from 'react-router-dom';
+import matchPath from 'react-router/matchPath';
 import Link from 'gatsby-link';
 import Button from 'material-ui/Button';
 

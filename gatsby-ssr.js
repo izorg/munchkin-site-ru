@@ -29,6 +29,7 @@ exports.replaceRenderer = ({
   ); // eslint-disable-line function-paren-newline
 
   replaceBodyHTMLString(bodyHTML);
+
   setHeadComponents([
     <style
       id="server-side-jss"

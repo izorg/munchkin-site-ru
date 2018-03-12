@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
+import Reboot from 'material-ui/Reboot';
 import { withStyles } from 'material-ui/styles';
 
 import munchkinWoff from '../fonts/munchkin.woff';
@@ -27,13 +28,8 @@ const styles = theme => ({
       fontStyle: 'normal',
     },
 
-    html: {
-      '-moz-osx-font-smoothing': 'grayscale',
-      '-webkit-font-smoothing': 'antialiased',
-    },
-
     body: {
-      margin: 0,
+      backgroundColor: theme.palette.common.white,
       padding: theme.spacing.unit,
     },
   },
@@ -49,24 +45,26 @@ const Layout = ({ children, classes, location }) => {
 
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={Fragment}>
-      <div>
-        <Helmet>
-          <html lang={locale} />
+      <Reboot>
+        <Fragment>
+          <Helmet>
+            <html lang={locale} />
 
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta charSet="utf-8" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-          <link href={favicon} rel="shortcut icon" />
-        </Helmet>
+            <link href={favicon} rel="shortcut icon" />
+          </Helmet>
 
-        <header className={classes.header}>
-          <LanguageSwitcher location={location} />
-        </header>
-        <main>
-          {children()}
-        </main>
-      </div>
+          <header className={classes.header}>
+            <LanguageSwitcher location={location} />
+          </header>
+          <main>
+            {children()}
+          </main>
+        </Fragment>
+      </Reboot>
     </IntlProvider>
   );
 };
