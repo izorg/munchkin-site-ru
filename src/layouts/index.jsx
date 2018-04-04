@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
-import Reboot from 'material-ui/Reboot';
+import CssBaseline from 'material-ui/CssBaseline';
 import { withStyles } from 'material-ui/styles';
 
 import munchkinWoff from '../fonts/munchkin.woff';
@@ -45,7 +45,7 @@ const Layout = ({ children, classes, location }) => {
 
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={Fragment}>
-      <Reboot>
+      <CssBaseline>
         <Fragment>
           <Helmet>
             <html lang={locale} />
@@ -64,7 +64,7 @@ const Layout = ({ children, classes, location }) => {
             {children()}
           </main>
         </Fragment>
-      </Reboot>
+      </CssBaseline>
     </IntlProvider>
   );
 };
