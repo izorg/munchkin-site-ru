@@ -1,19 +1,16 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
-import { addLocaleData, IntlProvider } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import ru from 'react-intl/locale-data/ru';
+import { IntlProvider } from 'react-intl';
 import CssBaseline from 'material-ui/CssBaseline';
 import { withStyles } from 'material-ui/styles';
+import { getCurrentLangKey } from 'ptz-i18n';
 
 import munchkinWoff from '../fonts/munchkin.woff';
 import munchkinWoff2 from '../fonts/munchkin.woff2';
 
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import favicon from '../favicon.png';
-import { getMessages } from '../i18n';
-
-addLocaleData([...en, ...ru]);
+import { availableLocales, defaultLocale, getMessages } from '../i18n';
 
 const textComponent = ({ children }) => children;
 
@@ -41,7 +38,7 @@ const styles = theme => ({
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children, classes, location }) => {
-  const locale = location.pathname.startsWith('/ru/') ? 'ru' : 'en';
+  const locale = getCurrentLangKey(availableLocales, defaultLocale, location.pathname);
 
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={textComponent}>

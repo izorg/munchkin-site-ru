@@ -6,5 +6,11 @@ const allMessages = {
   ru,
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const getMessages = locale => allMessages[locale || 'en'];
+const EN = 'en';
+const RU = 'ru';
+
+export const availableLocales = [EN, RU];
+
+export const defaultLocale = EN;
+
+export const getMessages = locale => allMessages[locale || defaultLocale];
