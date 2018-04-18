@@ -14,7 +14,7 @@ import { availableLocales, defaultLocale, getMessages } from '../i18n';
 
 const textComponent = ({ children }) => children;
 
-const styles = theme => ({
+const styles = (theme) => ({
   '@global': {
     '@font-face': {
       fontFamily: 'Munchkin',
@@ -38,10 +38,18 @@ const styles = theme => ({
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children, classes, location }) => {
-  const locale = getCurrentLangKey(availableLocales, defaultLocale, location.pathname);
+  const locale = getCurrentLangKey(
+    availableLocales,
+    defaultLocale,
+    location.pathname,
+  );
 
   return (
-    <IntlProvider locale={locale} messages={getMessages(locale)} textComponent={textComponent}>
+    <IntlProvider
+      locale={locale}
+      messages={getMessages(locale)}
+      textComponent={textComponent}
+    >
       <Fragment>
         <Helmet>
           <html lang={locale} />
@@ -58,9 +66,7 @@ const Layout = ({ children, classes, location }) => {
         <header className={classes.header}>
           <LanguageSwitcher location={location} />
         </header>
-        <main>
-          {children()}
-        </main>
+        <main>{children()}</main>
       </Fragment>
     </IntlProvider>
   );

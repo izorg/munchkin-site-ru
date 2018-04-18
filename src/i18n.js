@@ -13,4 +13,4 @@ export const availableLocales = [EN, RU];
 
 export const defaultLocale = EN;
 
-export const getMessages = locale => allMessages[locale || defaultLocale];
+export const getMessages = (locale) => allMessages[locale || defaultLocale];

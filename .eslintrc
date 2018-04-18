@@ -1,14 +1,28 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
   "env": {
     "browser": true,
     "node": true
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "always",
+        "singleQuote": true,
+        "trailingComma": "all"
       }
     ],
     "react/prop-types": [

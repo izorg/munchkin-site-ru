@@ -15,7 +15,8 @@ const messages = defineMessages({
   },
   src: {
     id: 'badge.src',
-    defaultMessage: 'https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png',
+    defaultMessage:
+      'https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png',
   },
 });
 

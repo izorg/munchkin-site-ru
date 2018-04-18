@@ -6,9 +6,8 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
 import Badge from '../Badge';
-import Gallery from '../Gallery';
 
-const styles = theme => ({
+const styles = (theme) => ({
   header: {
     color: theme.palette.common.black,
     fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
@@ -52,7 +51,12 @@ const Home = ({ classes, intl }) => (
       <title>{intl.formatMessage(messages.title)}</title>
     </Helmet>
 
-    <Typography align="center" className={classes.header} gutterBottom variant="display4">
+    <Typography
+      align="center"
+      className={classes.header}
+      gutterBottom
+      variant="display4"
+    >
       {intl.formatMessage(messages.title)}
     </Typography>
 
@@ -73,8 +77,6 @@ const Home = ({ classes, intl }) => (
     <Typography align="center" gutterBottom>
       <Badge />
     </Typography>
-
-    <Gallery lang={intl.locale} />
   </div>
 );
 
