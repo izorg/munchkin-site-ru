@@ -4,7 +4,10 @@ import { renderToString } from 'react-dom/server';
 import { JssProvider, SheetsRegistry } from 'react-jss';
 import { create } from 'jss';
 import preset from 'jss-preset-default';
-import { createGenerateClassName, MuiThemeProvider } from 'material-ui/styles';
+import {
+  createGenerateClassName,
+  MuiThemeProvider,
+} from '@material-ui/core/styles';
 
 import theme from './src/styles/munchkinTheme';
 

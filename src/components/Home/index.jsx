@@ -1,9 +1,9 @@
 import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import Helmet from 'react-helmet';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 import Badge from '../Badge';
 

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import CssBaseline from 'material-ui/CssBaseline';
-import { withStyles } from 'material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { withStyles } from '@material-ui/core/styles';
 import { getCurrentLangKey } from 'ptz-i18n';
 
 import munchkinWoff from '../fonts/munchkin.woff';

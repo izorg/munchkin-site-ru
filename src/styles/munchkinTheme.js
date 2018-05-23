@@ -1,5 +1,5 @@
-import { createMuiTheme } from 'material-ui/styles';
-import brown from 'material-ui/colors/brown';
+import { createMuiTheme } from '@material-ui/core/styles';
+import brown from '@material-ui/core/colors/brown';
 
 const theme = {
   palette: {

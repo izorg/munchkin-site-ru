@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   logoImage: {
