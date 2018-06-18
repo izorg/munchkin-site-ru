@@ -1,6 +1,6 @@
 import React from 'react';
 import matchPath from 'react-router/matchPath';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Button from '@material-ui/core/Button';
 
 // eslint-disable-next-line react/prop-types

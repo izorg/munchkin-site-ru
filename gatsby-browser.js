@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
+import '@babel/polyfill';
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import theme from './src/styles/munchkinTheme';
 
-exports.onInitialClientRender = () => {
+export const onInitialClientRender = () => {
   const cssStyles = window.document.getElementById('server-side-jss');
 
   if (cssStyles) {
@@ -12,7 +13,7 @@ exports.onInitialClientRender = () => {
   }
 };
 
-exports.wrapRootComponent = ({ Root }) => () => (
+export const wrapRootComponent = ({ Root }) => () => (
   <MuiThemeProvider theme={theme}>
     <Root />
   </MuiThemeProvider>

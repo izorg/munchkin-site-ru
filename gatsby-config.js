@@ -14,15 +14,6 @@ module.exports = {
         useLangKeyLayout: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-        analyzerPort: 3001,
-        defaultSizes: 'gzip',
-        production: true,
-      },
-    },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
   ],
 };

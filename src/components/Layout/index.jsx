@@ -5,12 +5,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import { getCurrentLangKey } from 'ptz-i18n';
 
-import munchkinWoff from '../fonts/munchkin.woff';
-import munchkinWoff2 from '../fonts/munchkin.woff2';
+import munchkinWoff from '../../fonts/munchkin.woff';
+import munchkinWoff2 from '../../fonts/munchkin.woff2';
 
-import LanguageSwitcher from '../components/LanguageSwitcher';
-import favicon from '../favicon.png';
-import { availableLocales, defaultLocale, getMessages } from '../i18n';
+import LanguageSwitcher from '../LanguageSwitcher/index';
+import favicon from '../../favicon.png';
+import { availableLocales, defaultLocale, getMessages } from '../../i18n';
 
 const textComponent = ({ children }) => children;
 
@@ -66,7 +66,7 @@ const Layout = ({ children, classes, location }) => {
         <header className={classes.header}>
           <LanguageSwitcher location={location} />
         </header>
-        <main>{children()}</main>
+        <main>{children}</main>
       </Fragment>
     </IntlProvider>
   );

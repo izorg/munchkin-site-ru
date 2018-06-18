@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies,import/prefer-default-export */
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { JssProvider, SheetsRegistry } from 'react-jss';
@@ -11,7 +11,7 @@ import {
 
 import theme from './src/styles/munchkinTheme';
 
-exports.replaceRenderer = ({
+export const replaceRenderer = ({
   bodyComponent,
   replaceBodyHTMLString,
   setHeadComponents,
