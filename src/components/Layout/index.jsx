@@ -9,7 +9,6 @@ import munchkinWoff from '../../fonts/munchkin.woff';
 import munchkinWoff2 from '../../fonts/munchkin.woff2';
 
 import LanguageSwitcher from '../LanguageSwitcher/index';
-import favicon from '../../favicon.png';
 import { availableLocales, defaultLocale, getMessages } from '../../i18n';
 
 const textComponent = ({ children }) => children;
@@ -53,12 +52,6 @@ const Layout = ({ children, classes, location }) => {
       <Fragment>
         <Helmet>
           <html lang={locale} />
-
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-          <link href={favicon} rel="shortcut icon" />
         </Helmet>
 
         <CssBaseline />

@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies,import/prefer-default-export */
+/* eslint-disable import/no-extraneous-dependencies,react/jsx-filename-extension */
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { JssProvider, SheetsRegistry } from 'react-jss';
@@ -11,6 +11,10 @@ import {
 
 import theme from './src/styles/munchkinTheme';
 
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([<link href="/favicon.png" rel="shortcut icon" />]);
+};
+
 export const replaceRenderer = ({
   bodyComponent,
   replaceBodyHTMLString,
@@ -21,15 +25,13 @@ export const replaceRenderer = ({
 
   jss.options.createGenerateClassName = createGenerateClassName;
 
-  // eslint-disable-next-line function-paren-newline
   const bodyHTML = renderToString(
-    // eslint-disable-next-line react/jsx-filename-extension
     <JssProvider registry={sheets} jss={jss}>
       <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
         {bodyComponent}
       </MuiThemeProvider>
     </JssProvider>,
-  ); // eslint-disable-line function-paren-newline
+  );
 
   replaceBodyHTMLString(bodyHTML);
 
