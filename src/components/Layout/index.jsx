@@ -3,13 +3,12 @@ import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
-import { getCurrentLangKey } from 'ptz-i18n';
 
 import munchkinWoff from '../../fonts/munchkin.woff';
 import munchkinWoff2 from '../../fonts/munchkin.woff2';
 
 import LanguageSwitcher from '../LanguageSwitcher/index';
-import { availableLocales, defaultLocale, getMessages } from '../../i18n';
+import { getLocaleFromLocation, getMessages } from '../../i18n';
 
 const textComponent = ({ children }) => children;
 
@@ -37,11 +36,7 @@ const styles = (theme) => ({
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children, classes, location }) => {
-  const locale = getCurrentLangKey(
-    availableLocales,
-    defaultLocale,
-    location.pathname,
-  );
+  const locale = getLocaleFromLocation(location);
 
   return (
     <IntlProvider
