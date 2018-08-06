@@ -15,6 +15,8 @@ module.exports = {
       },
     ],
     'prettier/prettier': ['error', prettier],
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-wrap-multilines': 'off',
     'react/prop-types': [
       'error',
       {
