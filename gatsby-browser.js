@@ -12,8 +12,7 @@ export const onInitialClientRender = () => {
   }
 };
 
-export const wrapRootComponent = ({ Root }) => () => (
-  <MuiThemeProvider theme={theme}>
-    <Root />
-  </MuiThemeProvider>
+// eslint-disable-next-line react/prop-types
+export const wrapRootElement = ({ element }) => (
+  <MuiThemeProvider theme={theme}>{element}</MuiThemeProvider>
 );

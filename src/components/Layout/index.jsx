@@ -8,7 +8,7 @@ import munchkinWoff from '../../fonts/munchkin.woff';
 import munchkinWoff2 from '../../fonts/munchkin.woff2';
 
 import LanguageSwitcher from '../LanguageSwitcher/index';
-import { getLocaleFromLocation, getMessages } from '../../i18n';
+import { getMessages } from '../../i18n';
 
 const textComponent = ({ children }) => children;
 
@@ -35,29 +35,25 @@ const styles = (theme) => ({
 });
 
 // eslint-disable-next-line react/prop-types
-const Layout = ({ children, classes, location }) => {
-  const locale = getLocaleFromLocation(location);
+const Layout = ({ children, classes, locale }) => (
+  <IntlProvider
+    locale={locale}
+    messages={getMessages(locale)}
+    textComponent={textComponent}
+  >
+    <Fragment>
+      <Helmet>
+        <html lang={locale} />
+      </Helmet>
 
-  return (
-    <IntlProvider
-      locale={locale}
-      messages={getMessages(locale)}
-      textComponent={textComponent}
-    >
-      <Fragment>
-        <Helmet>
-          <html lang={locale} />
-        </Helmet>
+      <CssBaseline />
 
-        <CssBaseline />
-
-        <header className={classes.header}>
-          <LanguageSwitcher location={location} />
-        </header>
-        <main>{children}</main>
-      </Fragment>
-    </IntlProvider>
-  );
-};
+      <header className={classes.header}>
+        <LanguageSwitcher locale={locale} />
+      </header>
+      <main>{children}</main>
+    </Fragment>
+  </IntlProvider>
+);
 
 export default withStyles(styles)(Layout);

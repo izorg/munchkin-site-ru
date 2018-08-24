@@ -3,12 +3,12 @@ import React from 'react';
 import LanguageSwitcherItem from './Item';
 
 // eslint-disable-next-line react/prop-types
-export default ({ location }) => (
+export default ({ locale }) => (
   <div style={{ textAlign: 'right' }}>
-    <LanguageSwitcherItem location={location} to="/">
+    <LanguageSwitcherItem disabled={locale === 'en'} to="/">
       en
     </LanguageSwitcherItem>
-    <LanguageSwitcherItem location={location} to="/ru/">
+    <LanguageSwitcherItem disabled={locale === 'ru'} to="/ru/">
       ru
     </LanguageSwitcherItem>
   </div>
