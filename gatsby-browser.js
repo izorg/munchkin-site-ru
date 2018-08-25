@@ -1,4 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
