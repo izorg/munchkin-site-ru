@@ -6,7 +6,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  plugins: ['prettier'],
+  plugins: ['json', 'prettier'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
