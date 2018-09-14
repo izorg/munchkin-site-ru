@@ -1,13 +1,9 @@
-/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/jsx-filename-extension,react/no-danger */
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { JssProvider, SheetsRegistry } from 'react-jss';
-import {
-  createGenerateClassName,
-  MuiThemeProvider,
-} from '@material-ui/core/styles';
+import { JssProvider } from 'react-jss';
 
-import theme from './src/styles/munchkinTheme';
+import getPageContext from './src/getPageContext';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -20,14 +16,13 @@ export const replaceRenderer = ({
   replaceBodyHTMLString,
   setHeadComponents,
 }) => {
-  const sheets = new SheetsRegistry();
-  const generateClassName = createGenerateClassName();
+  const muiPageContext = getPageContext.default
+    ? getPageContext.default()
+    : getPageContext();
 
   const bodyHTML = renderToString(
-    <JssProvider generateClassName={generateClassName} registry={sheets}>
-      <MuiThemeProvider sheetsManager={new Map()} theme={theme}>
-        {bodyComponent}
-      </MuiThemeProvider>
+    <JssProvider registry={muiPageContext.sheetsRegistry}>
+      {bodyComponent}
     </JssProvider>,
   );
 
@@ -35,8 +30,9 @@ export const replaceRenderer = ({
 
   setHeadComponents([
     <style
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: sheets.toString() }}
+      dangerouslySetInnerHTML={{
+        __html: muiPageContext.sheetsRegistry.toString(),
+      }}
       id="server-side-jss"
       key="server-side-jss"
     />,

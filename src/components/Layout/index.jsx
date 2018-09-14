@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 
 import munchkinWoff from '../../fonts/munchkin.woff';
@@ -45,8 +44,6 @@ const Layout = ({ children, classes, locale }) => (
       <Helmet>
         <html lang={locale} />
       </Helmet>
-
-      <CssBaseline />
 
       <header className={classes.header}>
         <LanguageSwitcher locale={locale} />
