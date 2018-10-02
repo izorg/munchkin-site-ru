@@ -34,9 +34,14 @@ const messages = defineMessages({
     defaultMessage: 'https://web.allmunchkins.com',
   },
 
+  privacy: {
+    id: 'home.privacy',
+    defaultMessage: 'Privacy Policy',
+  },
+
   title: {
     id: 'home.title',
-    defaultMessage: 'All munchkins',
+    defaultMessage: 'Munchkin Level Counter',
   },
 
   try: {
@@ -76,6 +81,10 @@ const Home = ({ classes, intl }) => (
 
     <Typography align="center" gutterBottom>
       <Badge />
+    </Typography>
+
+    <Typography align="center" gutterBottom>
+      <a href="/privacy.html">{intl.formatMessage(messages.privacy)}</a>
     </Typography>
   </div>
 );
