@@ -10,6 +10,7 @@ const theme = {
 
   typography: {
     fontFamily: '"Roboto", "San Francisco", "Helvetica", "Arial", sans-serif',
+    useNextVariants: true,
   },
 };
 

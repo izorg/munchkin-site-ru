@@ -60,7 +60,7 @@ const Home = ({ classes, intl }) => (
       align="center"
       className={classes.header}
       gutterBottom
-      variant="display4"
+      variant="h1"
     >
       {intl.formatMessage(messages.title)}
     </Typography>
@@ -73,7 +73,7 @@ const Home = ({ classes, intl }) => (
       <Button
         color="primary"
         href={intl.formatMessage(messages.link)}
-        variant="raised"
+        variant="contained"
       >
         {intl.formatMessage(messages.try)}
       </Button>
