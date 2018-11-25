@@ -14,7 +14,6 @@
     "stats": "cross-env STATS=true gatsby build"
   },
   "devDependencies": {
-    "@babel/polyfill": "7.0.0",
     "@material-ui/core": "3.5.1",
     "axios": "0.18.0",
     "babel-plugin-react-intl": "3.0.1",
