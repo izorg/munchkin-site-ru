@@ -1,7 +1,7 @@
 const prettier = require('./.prettierrc');
 
 module.exports = {
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
   env: {
     browser: true,
     node: true,
@@ -15,7 +15,6 @@ module.exports = {
       },
     ],
     'prettier/prettier': ['error', prettier],
-    'react/jsx-wrap-multilines': 'off',
     'react/prop-types': [
       'error',
       {
