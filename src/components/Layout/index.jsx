@@ -1,27 +1,10 @@
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
-import { IntlProvider } from 'react-intl';
 import { withStyles } from '@material-ui/core/styles';
 
-import munchkinWoff from '../../fonts/munchkin.woff';
-import munchkinWoff2 from '../../fonts/munchkin.woff2';
-
 import LanguageSwitcher from '../LanguageSwitcher/index';
-import { getMessages } from '../../i18n';
-
-const textComponent = ({ children }) => children;
 
 const styles = (theme) => ({
   '@global': {
-    '@font-face': {
-      fontFamily: 'Munchkin',
-      src: `
-        url(${munchkinWoff2}) format('woff2'),
-        url(${munchkinWoff}) format('woff')`,
-      fontWeight: 'normal',
-      fontStyle: 'normal',
-    },
-
     body: {
       backgroundColor: theme.palette.common.white,
       padding: theme.spacing.unit,
@@ -34,23 +17,13 @@ const styles = (theme) => ({
 });
 
 // eslint-disable-next-line react/prop-types
-const Layout = ({ children, classes, locale }) => (
-  <IntlProvider
-    locale={locale}
-    messages={getMessages(locale)}
-    textComponent={textComponent}
-  >
-    <Fragment>
-      <Helmet>
-        <html lang={locale} />
-      </Helmet>
-
-      <header className={classes.header}>
-        <LanguageSwitcher locale={locale} />
-      </header>
-      <main>{children}</main>
-    </Fragment>
-  </IntlProvider>
+const Layout = ({ children, classes }) => (
+  <Fragment>
+    <header className={classes.header}>
+      <LanguageSwitcher />
+    </header>
+    <main>{children}</main>
+  </Fragment>
 );
 
 export default withStyles(styles)(Layout);

@@ -1,9 +1,10 @@
 import React from 'react';
+import { injectIntl } from 'react-intl';
 
 import LanguageSwitcherItem from './Item';
 
 // eslint-disable-next-line react/prop-types
-export default ({ locale }) => (
+export default injectIntl(({ intl: { locale } }) => (
   <div style={{ textAlign: 'right' }}>
     <LanguageSwitcherItem disabled={locale === 'en'} to="/">
       en
@@ -12,4 +13,4 @@ export default ({ locale }) => (
       ru
     </LanguageSwitcherItem>
   </div>
-);
+));

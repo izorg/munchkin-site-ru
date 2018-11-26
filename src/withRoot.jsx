@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
+import { IntlProvider } from 'react-intl';
 import JssProvider from 'react-jss/lib/JssProvider';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
+import Css from './components/Css';
 import getPageContext from './getPageContext';
+import { getLocaleFromLocation, getMessages, setIntlLocale } from './i18n';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
     constructor(props) {
       super(props);
+
       this.muiPageContext = getPageContext();
+
+      setIntlLocale(getLocaleFromLocation(props.location));
     }
 
     componentDidMount() {
@@ -21,19 +27,32 @@ function withRoot(Component) {
     }
 
     render() {
+      const { location } = this.props;
+
+      const locale = getLocaleFromLocation(location);
+
       return (
-        <JssProvider generateClassName={this.muiPageContext.generateClassName}>
-          {/* MuiThemeProvider makes the theme available down the React
+        <Fragment>
+          <Helmet>
+            <html lang={locale} />
+          </Helmet>
+          <IntlProvider locale={locale} messages={getMessages(locale)}>
+            <JssProvider
+              generateClassName={this.muiPageContext.generateClassName}
+            >
+              {/* MuiThemeProvider makes the theme available down the React
               tree thanks to React context. */}
-          <MuiThemeProvider
-            theme={this.muiPageContext.theme}
-            sheetsManager={this.muiPageContext.sheetsManager}
-          >
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <Component {...this.props} />
-          </MuiThemeProvider>
-        </JssProvider>
+              <MuiThemeProvider
+                theme={this.muiPageContext.theme}
+                sheetsManager={this.muiPageContext.sheetsManager}
+              >
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <Css />
+                <Component {...this.props} />
+              </MuiThemeProvider>
+            </JssProvider>
+          </IntlProvider>
+        </Fragment>
       );
     }
   }
