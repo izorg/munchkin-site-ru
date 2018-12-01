@@ -1,12 +1,12 @@
-const prettier = require('./.prettierrc');
-
 module.exports = {
-  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
-  env: {
-    browser: true,
-    node: true,
-  },
-  plugins: ['json', 'prettier'],
+  root: true,
+  extends: [
+    'airbnb',
+    'plugin:compat/recommended',
+    'plugin:prettier/recommended',
+    'prettier/react',
+  ],
+  plugins: ['json'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -14,7 +14,6 @@ module.exports = {
         devDependencies: true,
       },
     ],
-    'prettier/prettier': ['error', prettier],
     'react/prop-types': [
       'error',
       {
@@ -22,4 +21,22 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['src/**/*.js', 'src/**/*.jsx'],
+      env: {
+        browser: true,
+      },
+    },
+    {
+      files: ['gatsby-ssr.js', 'scripts/**/*.js'],
+      env: {
+        node: true,
+      },
+      rules: {
+        'compat/compat': 'off',
+        'no-console': 'off',
+      },
+    },
+  ],
 };
