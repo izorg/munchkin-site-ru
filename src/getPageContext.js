@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { SheetsRegistry } from 'jss';
 import { createGenerateClassName } from '@material-ui/core/styles';
 
@@ -24,9 +23,9 @@ export default function getPageContext() {
   }
 
   // Reuse context on the client-side.
-  if (!global.__INIT_MATERIAL_UI__) {
-    global.__INIT_MATERIAL_UI__ = createPageContext();
+  if (!global.INIT_MATERIAL_UI) {
+    global.INIT_MATERIAL_UI = createPageContext();
   }
 
-  return global.__INIT_MATERIAL_UI__;
+  return global.INIT_MATERIAL_UI;
 }
