@@ -1,6 +1,7 @@
 import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -84,7 +85,7 @@ const Home = ({ classes, intl }) => (
     </Typography>
 
     <Typography align="center" gutterBottom>
-      <a href="/privacy.html">{intl.formatMessage(messages.privacy)}</a>
+      <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
     </Typography>
   </div>
 );

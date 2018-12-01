@@ -7,6 +7,9 @@ module.exports = {
     'prettier/react',
   ],
   plugins: ['json'],
+  env: {
+    browser: true,
+  },
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -14,6 +17,7 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    'react/no-unescaped-entities': 'off',
     'react/prop-types': [
       'error',
       {
@@ -23,14 +27,9 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['src/**/*.js', 'src/**/*.jsx'],
+      files: ['gatsby-config.js', 'gatsby-ssr.js', 'scripts/**/*.js'],
       env: {
-        browser: true,
-      },
-    },
-    {
-      files: ['gatsby-ssr.js', 'scripts/**/*.js'],
-      env: {
+        browser: false,
         node: true,
       },
       rules: {
