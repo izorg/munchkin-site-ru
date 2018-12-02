@@ -1,11 +1,13 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import brown from '@material-ui/core/colors/brown';
+import common from '@material-ui/core/colors/common';
 
 const theme = {
   palette: {
-    primary: {
-      main: brown[500],
+    background: {
+      default: common.white,
     },
+    primary: brown,
   },
 
   typography: {

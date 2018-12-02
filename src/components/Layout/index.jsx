@@ -6,7 +6,6 @@ import LanguageSwitcher from '../LanguageSwitcher/index';
 const styles = (theme) => ({
   '@global': {
     body: {
-      backgroundColor: theme.palette.common.white,
       padding: theme.spacing.unit,
     },
   },
