@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 import JssProvider from 'react-jss/lib/JssProvider';
+import PropTypes from 'prop-types';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Css from './components/Css';
@@ -56,6 +57,10 @@ function withRoot(Component) {
       );
     }
   }
+
+  WithRoot.propTypes = {
+    location: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  };
 
   return WithRoot;
 }
