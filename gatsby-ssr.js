@@ -7,7 +7,7 @@ import getPageContext from './src/getPageContext';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <link href="/favicon.png" key="favicon" rel="shortcut icon" />,
+    <link key="favicon" href="/favicon.png" rel="shortcut icon" />,
   ]);
 };
 
@@ -30,11 +30,11 @@ export const replaceRenderer = ({
 
   setHeadComponents([
     <style
+      key="server-side-jss"
       dangerouslySetInnerHTML={{
         __html: muiPageContext.sheetsRegistry.toString(),
       }}
       id="server-side-jss"
-      key="server-side-jss"
     />,
   ]);
 };

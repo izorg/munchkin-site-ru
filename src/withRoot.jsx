@@ -44,8 +44,8 @@ function withRoot(Component) {
               {/* MuiThemeProvider makes the theme available down the React
               tree thanks to React context. */}
               <MuiThemeProvider
-                theme={this.muiPageContext.theme}
                 sheetsManager={this.muiPageContext.sheetsManager}
+                theme={this.muiPageContext.theme}
               >
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <Css />
