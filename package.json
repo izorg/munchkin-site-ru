@@ -14,10 +14,10 @@
     "stats": "cross-env STATS=true gatsby build"
   },
   "devDependencies": {
-    "@material-ui/core": "3.8.1",
+    "@material-ui/core": "3.8.3",
     "axios": "0.18.0",
     "babel-plugin-react-intl": "3.0.1",
-    "core-js": "2.6.1",
+    "core-js": "2.6.2",
     "cross-env": "5.2.0",
     "eslint": "5.12.0",
     "eslint-config-airbnb": "17.1.0",
@@ -29,8 +29,8 @@
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.3",
     "fs-extra": "7.0.1",
-    "gatsby": "2.0.85",
-    "gatsby-plugin-google-analytics": "2.0.8",
+    "gatsby": "2.0.91",
+    "gatsby-plugin-google-analytics": "2.0.9",
     "gatsby-plugin-react-helmet": "3.0.5",
     "gatsby-plugin-webpack-bundle-analyzer": "1.0.4",
     "husky": "1.3.1",
