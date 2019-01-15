@@ -5,8 +5,8 @@ import { Link } from 'gatsby';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-
-import Badge from '../Badge';
+import Apple from 'mdi-material-ui/Apple';
+import GooglePlay from 'mdi-material-ui/GooglePlay';
 
 const styles = (theme) => ({
   header: {
@@ -19,8 +19,22 @@ const styles = (theme) => ({
   },
 
   buttonContainer: {
-    margin: '2em auto 1em',
+    margin: [[theme.spacing.unit * 4, 'auto', theme.spacing.unit * 2]],
     textAlign: 'center',
+  },
+
+  badges: {
+    marginBottom: theme.spacing.unit * 4,
+    textAlign: 'center',
+  },
+
+  badge: {
+    margin: theme.spacing.unit * 2,
+    width: 200,
+  },
+
+  badgeIcon: {
+    marginRight: theme.spacing.unit,
   },
 });
 
@@ -80,9 +94,33 @@ const Home = ({ classes, intl }) => (
       </Button>
     </div>
 
-    <Typography align="center" gutterBottom>
-      <Badge />
-    </Typography>
+    <div className={classes.badges}>
+      <Button
+        className={classes.badge}
+        component="a"
+        href="https://play.google.com/store/apps/details?id=com.izorg.munchkin"
+        rel="noopener noreferrer"
+        size="large"
+        target="_blank"
+        variant="outlined"
+      >
+        <GooglePlay className={classes.badgeIcon} />
+        Play Store
+      </Button>
+
+      <Button
+        className={classes.badge}
+        component="a"
+        href="https://itunes.apple.com/us/app/level-counter-for-munchkin/id1448937097?mt=8"
+        rel="noopener noreferrer"
+        size="large"
+        target="_blank"
+        variant="outlined"
+      >
+        <Apple className={classes.badgeIcon} />
+        App Store
+      </Button>
+    </div>
 
     <Typography align="center" gutterBottom>
       <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
