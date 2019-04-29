@@ -9,13 +9,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-helmet',
     },
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-    //   options: {
-    //     // analyzerPort: 3000,
-    //     defaultSizes: 'gzip',
-    //     production: true,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        defaultSizes: 'gzip',
+        disable: process.env.STATS !== 'true',
+        production: true,
+      },
+    },
   ],
 };
