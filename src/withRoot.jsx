@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import JssProvider from 'react-jss/lib/JssProvider';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Css from './components/Css';
-import getPageContext from './getPageContext';
 import { getLocaleFromLocation, getMessages, setIntlLocale } from './i18n';
 
 function withRoot(Component) {
@@ -14,17 +11,7 @@ function withRoot(Component) {
     constructor(props) {
       super(props);
 
-      this.muiPageContext = getPageContext();
-
       setIntlLocale(getLocaleFromLocation(props.location));
-    }
-
-    componentDidMount() {
-      // Remove the server-side injected CSS.
-      const jssStyles = document.querySelector('#server-side-jss');
-      if (jssStyles && jssStyles.parentNode) {
-        jssStyles.parentNode.removeChild(jssStyles);
-      }
     }
 
     render() {
@@ -38,20 +25,10 @@ function withRoot(Component) {
             <html lang={locale} />
           </Helmet>
           <IntlProvider locale={locale} messages={getMessages(locale)}>
-            <JssProvider
-              generateClassName={this.muiPageContext.generateClassName}
-            >
-              {/* MuiThemeProvider makes the theme available down the React
-              tree thanks to React context. */}
-              <MuiThemeProvider
-                sheetsManager={this.muiPageContext.sheetsManager}
-                theme={this.muiPageContext.theme}
-              >
-                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                <Css />
-                <Component {...this.props} />
-              </MuiThemeProvider>
-            </JssProvider>
+            <Fragment>
+              <Css />
+              <Component {...this.props} />
+            </Fragment>
           </IntlProvider>
         </Fragment>
       );

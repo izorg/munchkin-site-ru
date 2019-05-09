@@ -1,4 +1,3 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 
 import munchkinWoff from '../../fonts/munchkin.woff';
@@ -17,6 +16,6 @@ const styles = {
   },
 };
 
-const Css = withStyles(styles)(CssBaseline);
+const Css = withStyles(styles)(() => null);
 
 export default Css;

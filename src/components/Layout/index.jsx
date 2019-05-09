@@ -6,12 +6,12 @@ import LanguageSwitcher from '../LanguageSwitcher/index';
 const styles = (theme) => ({
   '@global': {
     body: {
-      padding: theme.spacing.unit,
+      padding: theme.spacing(1),
     },
   },
 
   header: {
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing(4),
   },
 });
 

@@ -6,9 +6,8 @@ module.exports = {
         trackingId: 'UA-11062557-8',
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-helmet',
-    },
+    'gatsby-plugin-material-ui',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {

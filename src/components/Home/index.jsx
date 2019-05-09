@@ -19,22 +19,22 @@ const styles = (theme) => ({
   },
 
   buttonContainer: {
-    margin: [[theme.spacing.unit * 4, 'auto', theme.spacing.unit * 2]],
+    margin: [[theme.spacing(4), 'auto', theme.spacing(2)]],
     textAlign: 'center',
   },
 
   badges: {
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing(4),
     textAlign: 'center',
   },
 
   badge: {
-    margin: theme.spacing.unit * 2,
+    margin: theme.spacing(2),
     width: 200,
   },
 
   badgeIcon: {
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(1),
   },
 });
 

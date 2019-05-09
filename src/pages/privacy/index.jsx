@@ -8,7 +8,7 @@ import withRoot from '../../withRoot';
 const styles = (theme) => ({
   '@global': {
     body: {
-      padding: [[0, theme.spacing.unit * 2]],
+      padding: [[0, theme.spacing(2)]],
     },
   },
 });

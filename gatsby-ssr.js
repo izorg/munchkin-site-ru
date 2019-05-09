@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-filename-extension,react/no-danger */
+/* eslint-disable react/jsx-no-undef,react/prop-types,react/jsx-filename-extension */
 import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { JssProvider } from 'react-jss';
 
-import getPageContext from './src/getPageContext';
+import TopLayout from './src/components/TopLayout';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -11,30 +9,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
   ]);
 };
 
-export const replaceRenderer = ({
-  bodyComponent,
-  replaceBodyHTMLString,
-  setHeadComponents,
-}) => {
-  const muiPageContext = getPageContext.default
-    ? getPageContext.default()
-    : getPageContext();
-
-  const bodyHTML = renderToString(
-    <JssProvider registry={muiPageContext.sheetsRegistry}>
-      {bodyComponent}
-    </JssProvider>,
-  );
-
-  replaceBodyHTMLString(bodyHTML);
-
-  setHeadComponents([
-    <style
-      key="server-side-jss"
-      dangerouslySetInnerHTML={{
-        __html: muiPageContext.sheetsRegistry.toString(),
-      }}
-      id="server-side-jss"
-    />,
-  ]);
+export const wrapRootElement = ({ element }) => {
+  return <TopLayout>{element}</TopLayout>;
 };
