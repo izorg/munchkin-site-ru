@@ -2,41 +2,42 @@ import React from 'react';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import Apple from 'mdi-material-ui/Apple';
 import GooglePlay from 'mdi-material-ui/GooglePlay';
 
-const styles = (theme) => ({
-  header: {
-    color: theme.palette.common.black,
-    fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
+const useStyles = makeStyles(
+  (theme) => ({
+    header: {
+      color: theme.palette.common.black,
+      fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
 
-    [theme.breakpoints.down('md')]: {
-      fontSize: 45,
+      [theme.breakpoints.down('md')]: {
+        fontSize: 45,
+      },
     },
-  },
 
-  buttonContainer: {
-    margin: [[theme.spacing(4), 'auto', theme.spacing(2)]],
-    textAlign: 'center',
-  },
+    buttonContainer: {
+      margin: [[theme.spacing(4), 'auto', theme.spacing(2)]],
+      textAlign: 'center',
+    },
 
-  badges: {
-    marginBottom: theme.spacing(4),
-    textAlign: 'center',
-  },
+    badges: {
+      marginBottom: theme.spacing(4),
+      textAlign: 'center',
+    },
 
-  badge: {
-    margin: theme.spacing(2),
-    width: 200,
-  },
+    badge: {
+      margin: theme.spacing(2),
+      width: 200,
+    },
 
-  badgeIcon: {
-    marginRight: theme.spacing(1),
-  },
-});
+    badgeIcon: {
+      marginRight: theme.spacing(1),
+    },
+  }),
+  { name: 'Home' },
+);
 
 const messages = defineMessages({
   description: {
@@ -65,71 +66,75 @@ const messages = defineMessages({
   },
 });
 
-const Home = ({ classes, intl }) => (
-  <div>
-    <Helmet>
-      <title>{intl.formatMessage(messages.title)}</title>
-    </Helmet>
+const Home = ({ intl }) => {
+  const classes = useStyles();
 
-    <Typography
-      align="center"
-      className={classes.header}
-      gutterBottom
-      variant="h1"
-    >
-      {intl.formatMessage(messages.title)}
-    </Typography>
+  return (
+    <div>
+      <Helmet>
+        <title>{intl.formatMessage(messages.title)}</title>
+      </Helmet>
 
-    <Typography align="center" gutterBottom>
-      {intl.formatMessage(messages.description)}
-    </Typography>
-
-    <div className={classes.buttonContainer}>
-      <Button
-        color="primary"
-        href={intl.formatMessage(messages.link)}
-        variant="contained"
+      <Typography
+        align="center"
+        className={classes.header}
+        gutterBottom
+        variant="h1"
       >
-        {intl.formatMessage(messages.try)}
-      </Button>
+        {intl.formatMessage(messages.title)}
+      </Typography>
+
+      <Typography align="center" gutterBottom>
+        {intl.formatMessage(messages.description)}
+      </Typography>
+
+      <div className={classes.buttonContainer}>
+        <Button
+          color="primary"
+          href={intl.formatMessage(messages.link)}
+          variant="contained"
+        >
+          {intl.formatMessage(messages.try)}
+        </Button>
+      </div>
+
+      <div className={classes.badges}>
+        <Button
+          className={classes.badge}
+          component="a"
+          href="https://play.google.com/store/apps/details?id=com.izorg.munchkin"
+          rel="noopener noreferrer"
+          size="large"
+          target="_blank"
+          variant="outlined"
+        >
+          <GooglePlay className={classes.badgeIcon} />
+          Play Store
+        </Button>
+
+        <Button
+          className={classes.badge}
+          component="a"
+          href="https://itunes.apple.com/us/app/level-counter-for-munchkin/id1448937097?mt=8"
+          rel="noopener noreferrer"
+          size="large"
+          target="_blank"
+          variant="outlined"
+        >
+          <Apple className={classes.badgeIcon} />
+          App Store
+        </Button>
+      </div>
+
+      <Typography align="center" gutterBottom>
+        <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
+      </Typography>
     </div>
-
-    <div className={classes.badges}>
-      <Button
-        className={classes.badge}
-        component="a"
-        href="https://play.google.com/store/apps/details?id=com.izorg.munchkin"
-        rel="noopener noreferrer"
-        size="large"
-        target="_blank"
-        variant="outlined"
-      >
-        <GooglePlay className={classes.badgeIcon} />
-        Play Store
-      </Button>
-
-      <Button
-        className={classes.badge}
-        component="a"
-        href="https://itunes.apple.com/us/app/level-counter-for-munchkin/id1448937097?mt=8"
-        rel="noopener noreferrer"
-        size="large"
-        target="_blank"
-        variant="outlined"
-      >
-        <Apple className={classes.badgeIcon} />
-        App Store
-      </Button>
-    </div>
-
-    <Typography align="center" gutterBottom>
-      <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
-    </Typography>
-  </div>
-);
+  );
+};
 
 Home.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default injectIntl(withStyles(styles)(Home));
+export default injectIntl(Home);
