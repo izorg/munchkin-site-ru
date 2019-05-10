@@ -6,15 +6,15 @@ import Css from '../Css';
 
 import theme from '../../styles/munchkinTheme';
 
-const TopLayout = ({ children }) => (
+const RootLayout = ({ children }) => (
   <MuiThemeProvider theme={theme}>
     <Css />
     {children}
   </MuiThemeProvider>
 );
 
-TopLayout.propTypes = {
+RootLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default TopLayout;
+export default RootLayout;

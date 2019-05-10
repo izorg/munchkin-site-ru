@@ -2,8 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { makeStyles, Typography } from '@material-ui/core';
 
-import withRoot from '../../withRoot';
-
 const useStyles = makeStyles(
   (theme) => ({
     '@global': {
@@ -184,4 +182,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default withRoot(PrivacyPolicy);
+export default PrivacyPolicy;
