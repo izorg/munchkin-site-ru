@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import Css from './components/Css';
 import { getLocaleFromLocation, getMessages, setIntlLocale } from './i18n';
 
 function withRoot(Component) {
@@ -25,10 +24,7 @@ function withRoot(Component) {
             <html lang={locale} />
           </Helmet>
           <IntlProvider locale={locale} messages={getMessages(locale)}>
-            <Fragment>
-              <Css />
-              <Component {...this.props} />
-            </Fragment>
+            <Component {...this.props} />
           </IntlProvider>
         </Fragment>
       );

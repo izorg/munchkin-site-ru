@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CssBaseline, MuiThemeProvider } from '@material-ui/core';
+import { MuiThemeProvider } from '@material-ui/core';
+
+import Css from '../Css';
 
 import theme from '../../styles/munchkinTheme';
 
 const TopLayout = ({ children }) => (
   <MuiThemeProvider theme={theme}>
-    <CssBaseline />
+    <Css />
     {children}
   </MuiThemeProvider>
 );
