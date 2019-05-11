@@ -23,7 +23,7 @@ export const availableLocales = [EN, RU];
 export const defaultLocale = EN;
 
 export const getLocaleFromLocation = ({ pathname }) => {
-  const locale = pathname.split('/')[1].toLocaleLowerCase();
+  const locale = pathname.split('/')[1].toLowerCase();
 
   return availableLocales.includes(locale) ? locale : defaultLocale;
 };
