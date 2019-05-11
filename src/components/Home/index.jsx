@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { Button, makeStyles, Typography } from '@material-ui/core';
@@ -40,42 +39,16 @@ const useStyles = makeStyles(
   { name: 'Home' },
 );
 
-const messages = defineMessages({
-  description: {
-    id: 'home.description',
-    defaultMessage: 'Simple but powerful Munchkin level counter',
-  },
-
-  link: {
-    id: 'home.link',
-    defaultMessage: 'https://web.allmunchkins.com',
-  },
-
-  privacy: {
-    id: 'home.privacy',
-    defaultMessage: 'Privacy Policy',
-  },
-
-  title: {
-    id: 'home.title',
-    defaultMessage: 'Munchkin Level Counter',
-  },
-
-  try: {
-    id: 'home.try',
-    defaultMessage: 'Try',
-  },
-});
-
-const Home = ({ intl }) => {
+const Home = () => {
   const classes = useStyles();
 
   const { t } = useTranslation();
+  const title = t('home.title', { defaultValue: 'Munchkin Level Counter' });
 
   return (
     <div>
       <Helmet>
-        <title>{intl.formatMessage(messages.title)}</title>
+        <title>{title}</title>
       </Helmet>
 
       <Typography
@@ -84,20 +57,24 @@ const Home = ({ intl }) => {
         gutterBottom
         variant="h1"
       >
-        {intl.formatMessage(messages.title)}
+        {title}
       </Typography>
 
       <Typography align="center" gutterBottom>
-        {intl.formatMessage(messages.description)}
+        {t('home.description', {
+          defaultValue: 'Simple but powerful Munchkin level counter',
+        })}
       </Typography>
 
       <div className={classes.buttonContainer}>
         <Button
           color="primary"
-          href={intl.formatMessage(messages.link)}
+          href={t('home.link', {
+            defaultValue: 'https://web.allmunchkins.com',
+          })}
           variant="contained"
         >
-          {t('home.try')}
+          {t('home.try', { defaultValue: 'Try' })}
         </Button>
       </div>
 
@@ -130,14 +107,12 @@ const Home = ({ intl }) => {
       </div>
 
       <Typography align="center" gutterBottom>
-        <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
+        <Link to="/privacy">
+          {t('home.privacy', { defaultValue: 'Privacy Policy' })}
+        </Link>
       </Typography>
     </div>
   );
 };
 
-Home.propTypes = {
-  intl: intlShape.isRequired,
-};
-
-export default injectIntl(Home);
+export default Home;

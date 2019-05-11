@@ -1,16 +1,23 @@
 import React from 'react';
-import { injectIntl } from 'react-intl';
+import { useTranslation } from 'react-i18next';
 
-import LanguageSwitcherItem from './Item';
+import Item from './Item';
 
-// eslint-disable-next-line react/prop-types
-export default injectIntl(({ intl: { locale } }) => (
-  <div style={{ textAlign: 'right' }}>
-    <LanguageSwitcherItem disabled={locale === 'en'} to="/">
-      en
-    </LanguageSwitcherItem>
-    <LanguageSwitcherItem disabled={locale === 'ru'} to="/ru/">
-      ru
-    </LanguageSwitcherItem>
-  </div>
-));
+const LanguageSwitcher = () => {
+  const {
+    i18n: { language },
+  } = useTranslation();
+
+  return (
+    <div style={{ textAlign: 'right' }}>
+      <Item disabled={language === 'en'} to="/">
+        en
+      </Item>
+      <Item disabled={language === 'ru'} to="/ru/">
+        ru
+      </Item>
+    </div>
+  );
+};
+
+export default LanguageSwitcher;
