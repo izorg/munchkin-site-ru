@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
@@ -69,6 +70,8 @@ const messages = defineMessages({
 const Home = ({ intl }) => {
   const classes = useStyles();
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <Helmet>
@@ -94,7 +97,7 @@ const Home = ({ intl }) => {
           href={intl.formatMessage(messages.link)}
           variant="contained"
         >
-          {intl.formatMessage(messages.try)}
+          {t('home.try')}
         </Button>
       </div>
 

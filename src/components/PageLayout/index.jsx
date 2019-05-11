@@ -1,34 +1,31 @@
-import React, { Fragment } from 'react';
+import React, { useMemo } from 'react';
 import Helmet from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { IntlProvider } from 'react-intl';
 import PropTypes from 'prop-types';
 
 import { getLocaleFromLocation, getMessages, setIntlLocale } from '../../i18n';
 
-class PageLayout extends React.Component {
-  constructor(props) {
-    super(props);
+const PageLayout = ({ children, location }) => {
+  const locale = getLocaleFromLocation(location);
+  const { i18n } = useTranslation();
 
-    setIntlLocale(getLocaleFromLocation(props.location));
-  }
+  useMemo(() => {
+    setIntlLocale(locale);
+    i18n.changeLanguage(locale);
+  }, [locale]);
 
-  render() {
-    const { children, location } = this.props;
-
-    const locale = getLocaleFromLocation(location);
-
-    return (
-      <Fragment>
-        <Helmet>
-          <html lang={locale} />
-        </Helmet>
-        <IntlProvider locale={locale} messages={getMessages(locale)}>
-          {children}
-        </IntlProvider>
-      </Fragment>
-    );
-  }
-}
+  return (
+    <>
+      <Helmet>
+        <html lang={locale} />
+      </Helmet>
+      <IntlProvider locale={locale} messages={getMessages(locale)}>
+        {children}
+      </IntlProvider>
+    </>
+  );
+};
 
 PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
