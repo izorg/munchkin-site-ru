@@ -9,12 +9,7 @@ import GooglePlay from 'mdi-material-ui/GooglePlay';
 const useStyles = makeStyles(
   (theme) => ({
     header: {
-      color: theme.palette.common.black,
       fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
-
-      [theme.breakpoints.down('md')]: {
-        fontSize: 45,
-      },
     },
 
     buttonContainer: {
@@ -41,8 +36,8 @@ const useStyles = makeStyles(
 
 const Home = () => {
   const classes = useStyles();
-
   const { t } = useTranslation();
+
   const title = t('home.title', { defaultValue: 'Munchkin Level Counter' });
 
   return (

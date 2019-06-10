@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import brown from '@material-ui/core/colors/brown';
 import common from '@material-ui/core/colors/common';
 
@@ -16,4 +16,4 @@ const theme = {
   },
 };
 
-export default createMuiTheme(theme);
+export default responsiveFontSizes(createMuiTheme(theme));
