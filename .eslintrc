@@ -3,10 +3,10 @@
   "extends": [
     "airbnb",
     "plugin:compat/recommended",
+    "plugin:json/recommended",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
-  "plugins": ["json"],
   "env": {
     "browser": true
   },
