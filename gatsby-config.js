@@ -3,6 +3,7 @@ module.exports = {
     'gatsby-plugin-layout',
     'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

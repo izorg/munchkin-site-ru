@@ -1,19 +1,21 @@
+import { makeStyles, Theme, Typography } from '@material-ui/core';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { makeStyles, Typography } from '@material-ui/core';
+
+const displayName = 'PrivacyPolicy';
 
 const useStyles = makeStyles(
-  (theme) => ({
+  (theme: Theme) => ({
     '@global': {
       body: {
         padding: theme.spacing(0, 2),
       },
     },
   }),
-  { name: 'PrivacyPolicy' },
+  { name: displayName },
 );
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   useStyles();
 
   return (
@@ -60,7 +62,7 @@ const PrivacyPolicy = () => {
           <ul>
             <li>
               <a
-                href="https://www.google.com/policies/privacy/"
+                href="https://www.google.com/policies/privacy/index.tsx"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -181,5 +183,7 @@ const PrivacyPolicy = () => {
     </>
   );
 };
+
+PrivacyPolicy.displayName = displayName;
 
 export default PrivacyPolicy;
