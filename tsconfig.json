@@ -12,6 +12,9 @@
   },
   "exclude": ["node_modules"],
   "include": [
+    "**/*.js",
+    "**/*.json",
+    "**/*.jsx",
     "**/*.ts",
     "**/*.tsx"
   ]

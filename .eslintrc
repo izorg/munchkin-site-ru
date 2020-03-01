@@ -1,33 +1,62 @@
 {
-  "root": true,
+  "env": {
+    "es6": true
+  },
   "extends": [
-    "airbnb",
-    "plugin:compat/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:json/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier/@typescript-eslint",
     "prettier/react"
   ],
-  "env": {
-    "browser": true
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "extraFileExtensions": [".json"],
+    "project": "./tsconfig.json",
+    "sourceType": "module"
   },
+  "plugins": ["react-hooks"],
   "rules": {
-    "import/no-extraneous-dependencies": [
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "devDependencies": true
+        "ignoreRestSiblings": true
       }
     ],
-    "react/no-unescaped-entities": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-sort-default-props": "error",
+    "@typescript-eslint/unbound-method": "off",
+    "import/named": "off",
+    "import/newline-after-import": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "newline-before-return": "error",
+    "no-console": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react/display-name": "error",
     "react/jsx-sort-props": "error",
-    "react/prop-types": [
-      "error",
-      {
-        "ignore": ["classes", "theme"]
-      }
-    ],
-    "react/sort-prop-types": "error",
+    "react/prop-types": "off",
+    "require-atomic-updates": "off",
     "sort-imports": [
       "error",
       {
@@ -36,16 +65,16 @@
       }
     ]
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "overrides": [
     {
-      "files": ["gatsby-config.js", "gatsby-ssr.js", "scripts/**/*.js"],
+      "files": ["gatsby-config.js"],
       "env": {
-        "browser": false,
         "node": true
-      },
-      "rules": {
-        "compat/compat": "off",
-        "no-console": "off"
       }
     }
   ]

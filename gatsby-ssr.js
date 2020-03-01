@@ -6,7 +6,7 @@ import RootLayout from './src/components/RootLayout';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <link key="favicon" href="/favicon.png" rel="shortcut icon" />,
+    <link href="/favicon.png" key="favicon" rel="shortcut icon" />,
   ]);
 };
 

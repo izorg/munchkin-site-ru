@@ -3,8 +3,14 @@ import React from 'react';
 import Home from '../components/Home';
 import Layout from '../components/Layout';
 
-export default () => (
+const displayName = 'Index';
+
+const Index = () => (
   <Layout>
     <Home />
   </Layout>
 );
+
+Index.displayName = displayName;
+
+export default Index;
