@@ -1,6 +1,6 @@
-import React from 'react';
+import { Button } from '@material-ui/core';
 import { Link } from 'gatsby';
-import Button from '@material-ui/core/Button';
+import React from 'react';
 
 // eslint-disable-next-line react/prop-types
 export default ({ to, ...props }) => (

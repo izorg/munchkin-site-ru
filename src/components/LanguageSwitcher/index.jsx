@@ -1,19 +1,17 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useIntl } from 'react-intl';
 
 import Item from './Item';
 
 const LanguageSwitcher = () => {
-  const {
-    i18n: { language },
-  } = useTranslation();
+  const { locale } = useIntl();
 
   return (
     <div style={{ textAlign: 'right' }}>
-      <Item disabled={language === 'en'} to="/">
+      <Item disabled={locale === 'en'} to="/">
         en
       </Item>
-      <Item disabled={language === 'ru'} to="/ru/">
+      <Item disabled={locale === 'ru'} to="/ru/">
         ru
       </Item>
     </div>

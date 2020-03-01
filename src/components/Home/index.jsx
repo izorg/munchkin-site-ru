@@ -1,10 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Apple from 'mdi-material-ui/Apple';
 import GooglePlay from 'mdi-material-ui/GooglePlay';
+import { defineMessages, useIntl } from 'react-intl';
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -34,11 +34,30 @@ const useStyles = makeStyles(
   { name: 'Home' },
 );
 
+const messages = defineMessages({
+  description: {
+    id: 'home.description',
+    defaultValue: 'Simple but powerful Munchkin level counter',
+  },
+  privacy: {
+    id: 'home.privacy',
+    defaultValue: 'Privacy Policy',
+  },
+  title: {
+    id: 'home.title',
+    defaultValue: 'Munchkin Level Counter',
+  },
+  try: {
+    id: 'home.try',
+    defaultValue: 'Try',
+  },
+});
+
 const Home = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const intl = useIntl();
 
-  const title = t('home.title', { defaultValue: 'Munchkin Level Counter' });
+  const title = intl.formatMessage(messages.title);
 
   return (
     <div>
@@ -56,20 +75,16 @@ const Home = () => {
       </Typography>
 
       <Typography align="center" gutterBottom>
-        {t('home.description', {
-          defaultValue: 'Simple but powerful Munchkin level counter',
-        })}
+        {intl.formatMessage(messages.description)}
       </Typography>
 
       <div className={classes.buttonContainer}>
         <Button
           color="primary"
-          href={t('home.link', {
-            defaultValue: 'https://web.allmunchkins.com',
-          })}
+          href="https://web.allmunchkins.com"
           variant="contained"
         >
-          {t('home.try', { defaultValue: 'Try' })}
+          {intl.formatMessage(messages.try)}
         </Button>
       </div>
 
@@ -102,9 +117,7 @@ const Home = () => {
       </div>
 
       <Typography align="center" gutterBottom>
-        <Link to="/privacy">
-          {t('home.privacy', { defaultValue: 'Privacy Policy' })}
-        </Link>
+        <Link to="/privacy">{intl.formatMessage(messages.privacy)}</Link>
       </Typography>
     </div>
   );

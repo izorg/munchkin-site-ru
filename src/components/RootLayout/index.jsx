@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { MuiThemeProvider } from '@material-ui/core';
-
-import Css from '../Css';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import theme from '../../styles/munchkinTheme';
+
+import Css from '../Css';
 
 const RootLayout = ({ children }) => (
   <MuiThemeProvider theme={theme}>
