@@ -4,7 +4,7 @@
   "repository": "https://github.com/izorg/munchkin-site",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf .cache public",
+    "clean": "rm -rf .cache public",
     "dev": "gatsby develop --host=localhost",
     "i18n:download": "node scripts/i18n/download.js",
     "i18n:upload": "node scripts/i18n/upload.js",
@@ -44,7 +44,6 @@
     "react-dom": "16.13.0",
     "react-helmet": "5.2.1",
     "react-intl": "3.12.0",
-    "rimraf": "3.0.2",
     "typescript": "3.8.3"
   }
 }
