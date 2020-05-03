@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const displayName = 'PrivacyPolicy';
 

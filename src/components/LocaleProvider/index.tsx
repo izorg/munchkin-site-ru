@@ -1,6 +1,6 @@
 import { useLocation } from '@reach/router';
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { IntlProvider } from 'react-intl';
 
 import en from '../../../languages/en.json';
