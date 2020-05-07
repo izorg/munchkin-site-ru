@@ -1,4 +1,5 @@
 /.cache/
+/.graphqlconfig
 /.idea/
 /config.json
 /languages/de.json
@@ -6,3 +7,4 @@
 /messages/
 /node_modules/
 /public/
+/schema.graphql
