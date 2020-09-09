@@ -1,8 +1,12 @@
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import {
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeOptions,
+} from '@material-ui/core';
 import brown from '@material-ui/core/colors/brown';
 import common from '@material-ui/core/colors/common';
 
-const theme = {
+const theme: ThemeOptions = {
   palette: {
     background: {
       default: common.white,
@@ -12,7 +16,6 @@ const theme = {
 
   typography: {
     fontFamily: '"Roboto", "San Francisco", "Helvetica", "Arial", sans-serif',
-    useNextVariants: true,
   },
 };
 

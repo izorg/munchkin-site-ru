@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Button } from '@material-ui/core';
 import { Link } from 'gatsby';
 import React from 'react';

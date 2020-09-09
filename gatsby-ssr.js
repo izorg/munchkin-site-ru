@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export,react/jsx-filename-extension,react/prop-types */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React from 'react';
 
 import PageLayout from './src/components/PageLayout';

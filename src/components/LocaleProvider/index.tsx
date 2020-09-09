@@ -26,9 +26,7 @@ const getLocaleFromLocation = ({ pathname }: Window['location']): Locale => {
   return availableLocales.includes(locale) ? locale : defaultLocale;
 };
 
-const LocaleProvider: React.FC<React.PropsWithChildren<{}>> = ({
-  children,
-}) => {
+const LocaleProvider: React.FC = ({ children }) => {
   const locale = getLocaleFromLocation(useLocation());
 
   return (

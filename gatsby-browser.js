@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies,react/prop-types,react/jsx-filename-extension */
 import React from 'react';
 
 import PageLayout from './src/components/PageLayout';

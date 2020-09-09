@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import React from 'react';
 import { CssBaseline, makeStyles } from '@material-ui/core';
 
