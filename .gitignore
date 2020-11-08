@@ -1,10 +1,4 @@
-/.cache/
-/.graphqlconfig
-/.idea/
-/config.json
-/languages/de.json
-/languages/uk.json
-/messages/
-/node_modules/
-/public/
-/schema.graphql
+.cache/
+.idea/
+node_modules/
+public/

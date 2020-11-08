@@ -1,12 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
-import { makeStyles, Theme, Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const displayName = 'PrivacyPolicy';
 
 const useStyles = makeStyles(
-  (theme: Theme) => ({
+  (theme) => ({
     '@global': {
       body: {
         padding: theme.spacing(0, 2),
@@ -16,7 +15,7 @@ const useStyles = makeStyles(
   { name: displayName },
 );
 
-const PrivacyPolicy: React.FC = () => {
+const PrivacyPolicy = () => {
   useStyles();
 
   return (

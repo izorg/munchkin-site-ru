@@ -1,5 +1,5 @@
-android >= 4.4.2
-chrome >= 49
+ie 11
 edge >= 14
 firefox >= 52
+chrome >= 49
 safari >= 10
