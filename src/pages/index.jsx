@@ -77,14 +77,14 @@ const Home = () => {
             <Button
               disabled={locale === 'en'}
               size="small"
-              to={localizedPath(defaultLang, 'en', '/')}
+              to={localizedPath({ defaultLang, locale: 'en', path: '/' })}
             >
               EN
             </Button>
             <Button
               disabled={locale === 'ru'}
               size="small"
-              to={localizedPath(defaultLang, 'ru', '/')}
+              to={localizedPath({ defaultLang, locale: 'ru', path: '/' })}
             >
               RU
             </Button>
