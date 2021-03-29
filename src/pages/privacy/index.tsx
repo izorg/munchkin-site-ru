@@ -1,18 +1,18 @@
-import { makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import { makeStyles, Typography } from "@material-ui/core";
+import * as React from "react";
+import { Helmet } from "react-helmet";
 
-const displayName = 'PrivacyPolicy';
+const displayName = "PrivacyPolicy";
 
 const useStyles = makeStyles(
   (theme) => ({
-    '@global': {
+    "@global": {
       body: {
         padding: theme.spacing(0, 2),
       },
     },
   }),
-  { name: displayName },
+  { name: displayName }
 );
 
 const PrivacyPolicy = () => {
@@ -176,7 +176,7 @@ const PrivacyPolicy = () => {
         </p>
         <p>
           If you have any questions or suggestions about my Privacy Policy, do
-          not hesitate to contact me at{' '}
+          not hesitate to contact me at{" "}
           <a href="mailto:izorgster@gmail.com">izorgster@gmail.com</a>.
         </p>
       </Typography>

@@ -6,47 +6,47 @@ import {
   SvgIcon,
   Toolbar,
   Typography,
-} from '@material-ui/core';
-import { mdiApple, mdiGooglePlay } from '@mdi/js';
-import { useLocalization } from 'gatsby-theme-i18n';
-import { Button, Link } from 'gatsby-theme-material-ui';
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { defineMessages, useIntl } from 'react-intl';
+} from "@material-ui/core";
+import { mdiApple, mdiGooglePlay } from "@mdi/js";
+import { useLocalization } from "gatsby-theme-i18n";
+import { Button, Link } from "gatsby-theme-material-ui";
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { defineMessages, useIntl } from "react-intl";
 
-const displayName = 'Home';
+const displayName = "Home";
 
 const messages = defineMessages({
   description: {
-    id: 'home.description',
-    defaultValue: 'Simple but powerful Munchkin level counter',
+    id: "home.description",
+    defaultValue: "Simple but powerful Munchkin level counter",
   },
 
   privacy: {
-    id: 'home.privacy',
-    defaultValue: 'Privacy Policy',
+    id: "home.privacy",
+    defaultValue: "Privacy Policy",
   },
 
   title: {
-    id: 'home.title',
-    defaultValue: 'Munchkin Level Counter',
+    id: "home.title",
+    defaultValue: "Munchkin Level Counter",
   },
 
   try: {
-    id: 'home.try',
-    defaultValue: 'Try',
+    id: "home.try",
+    defaultValue: "Try",
   },
 });
 
 const useStyles = makeStyles(
   (theme) => ({
-    '@global': {
-      '@font-face': {
-        fontFamily: 'Munchkin',
+    "@global": {
+      "@font-face": {
+        fontFamily: "Munchkin",
         src:
           "url(/fonts/munchkin.woff2) format('woff2'), url(/fonts/munchkin.woff) format('woff')",
-        fontWeight: 'normal',
-        fontStyle: 'normal',
+        fontWeight: "normal",
+        fontStyle: "normal",
       },
     },
 
@@ -54,7 +54,7 @@ const useStyles = makeStyles(
       fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
     },
   }),
-  { name: displayName },
+  { name: displayName }
 );
 
 const Home = () => {
@@ -75,16 +75,16 @@ const Home = () => {
         <AppBar color="transparent" elevation={0} position="static">
           <Toolbar component={Box} justifyContent="flex-end">
             <Button
-              disabled={locale === 'en'}
+              disabled={locale === "en"}
               size="small"
-              to={localizedPath({ defaultLang, locale: 'en', path: '/' })}
+              to={localizedPath({ defaultLang, locale: "en", path: "/" })}
             >
               EN
             </Button>
             <Button
-              disabled={locale === 'ru'}
+              disabled={locale === "ru"}
               size="small"
-              to={localizedPath({ defaultLang, locale: 'ru', path: '/' })}
+              to={localizedPath({ defaultLang, locale: "ru", path: "/" })}
             >
               RU
             </Button>
@@ -121,6 +121,7 @@ const Home = () => {
           >
             <Button
               href="https://play.google.com/store/apps/details?id=com.izorg.munchkin"
+              // @ts-ignore
               rel="noopener noreferrer"
               size="large"
               startIcon={
@@ -142,6 +143,7 @@ const Home = () => {
           >
             <Button
               href="https://itunes.apple.com/us/app/level-counter-for-munchkin/id1448937097?mt=8"
+              // @ts-ignore
               rel="noopener noreferrer"
               size="large"
               startIcon={

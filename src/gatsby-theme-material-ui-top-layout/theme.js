@@ -1,4 +1,4 @@
-import { createMuiTheme, colors, responsiveFontSizes } from '@material-ui/core';
+import { createMuiTheme, colors, responsiveFontSizes } from "@material-ui/core";
 
 const theme = responsiveFontSizes(
   createMuiTheme({
@@ -12,7 +12,7 @@ const theme = responsiveFontSizes(
     typography: {
       fontFamily: '"Roboto", "San Francisco", "Helvetica", "Arial", sans-serif',
     },
-  }),
+  })
 );
 
 export default theme;
