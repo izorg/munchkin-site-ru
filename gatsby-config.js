@@ -30,12 +30,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-theme-material-ui",
-      options: {
-        webFontsConfig: false,
-      },
-    },
-    {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         defaultSizes: "gzip",

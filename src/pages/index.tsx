@@ -1,16 +1,18 @@
 import {
   AppBar,
   Box,
+  Button,
   Container,
+  Link as MuiLink,
   makeStyles,
   SvgIcon,
   Toolbar,
   Typography,
 } from "@material-ui/core";
 import { mdiApple, mdiGooglePlay } from "@mdi/js";
+import { Link } from "gatsby"
+// @ts-ignore
 import { useLocalization } from "gatsby-theme-i18n";
-import { Button, Link } from "gatsby-theme-material-ui";
-import * as React from "react";
 import { Helmet } from "react-helmet";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -75,6 +77,8 @@ const Home = () => {
         <AppBar color="transparent" elevation={0} position="static">
           <Toolbar component={Box} justifyContent="flex-end">
             <Button
+              color="inherit"
+              component={Link}
               disabled={locale === "en"}
               size="small"
               to={localizedPath({ defaultLang, locale: "en", path: "/" })}
@@ -82,6 +86,8 @@ const Home = () => {
               EN
             </Button>
             <Button
+              color="inherit"
+              component={Link}
               disabled={locale === "ru"}
               size="small"
               to={localizedPath({ defaultLang, locale: "ru", path: "/" })}
@@ -120,8 +126,8 @@ const Home = () => {
             width={200}
           >
             <Button
+              color="inherit"
               href="https://play.google.com/store/apps/details?id=com.izorg.munchkin"
-              // @ts-ignore
               rel="noopener noreferrer"
               size="large"
               startIcon={
@@ -142,8 +148,8 @@ const Home = () => {
             width={200}
           >
             <Button
+              color="inherit"
               href="https://itunes.apple.com/us/app/level-counter-for-munchkin/id1448937097?mt=8"
-              // @ts-ignore
               rel="noopener noreferrer"
               size="large"
               startIcon={
@@ -160,9 +166,9 @@ const Home = () => {
         </Box>
 
         <Box marginTop={4} textAlign="center">
-          <Link to="/privacy" underline="always">
+          <MuiLink component={Link} to="/privacy" underline="always">
             {formatMessage(messages.privacy)}
-          </Link>
+          </MuiLink>
         </Box>
       </Container>
     </>

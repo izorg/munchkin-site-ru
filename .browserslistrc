@@ -1,5 +1,5 @@
-ie 11
-edge >= 14
-firefox >= 52
-chrome >= 49
-safari >= 10
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+not IE 11
