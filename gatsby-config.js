@@ -1,7 +1,7 @@
 module.exports = {
   flags: {
     DEV_SSR: true,
-    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: process.env.CI !== "true",
   },
   plugins: [
     {
@@ -37,6 +37,7 @@ module.exports = {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         defaultSizes: "gzip",
+        disable: process.env.CI === "true",
       },
     },
   ],
