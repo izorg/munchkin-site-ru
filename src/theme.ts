@@ -1,7 +1,7 @@
-import { createMuiTheme, colors, responsiveFontSizes } from "@material-ui/core";
+import { createTheme, colors, responsiveFontSizes } from "@material-ui/core";
 
 const theme = responsiveFontSizes(
-  createMuiTheme({
+  createTheme({
     palette: {
       background: {
         default: colors.common.white,

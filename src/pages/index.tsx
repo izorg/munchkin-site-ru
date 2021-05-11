@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { mdiApple, mdiGooglePlay } from "@mdi/js";
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 // @ts-ignore
 import { useLocalization } from "gatsby-theme-i18n";
 import { Helmet } from "react-helmet";
@@ -45,8 +45,7 @@ const useStyles = makeStyles(
     "@global": {
       "@font-face": {
         fontFamily: "Munchkin",
-        src:
-          "url(/fonts/munchkin.woff2) format('woff2'), url(/fonts/munchkin.woff) format('woff')",
+        src: "url(/fonts/munchkin.woff2) format('woff2'), url(/fonts/munchkin.woff) format('woff')",
         fontWeight: "normal",
         fontStyle: "normal",
       },
