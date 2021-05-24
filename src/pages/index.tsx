@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import { mdiApple, mdiGooglePlay } from "@mdi/js";
 import { Link } from "gatsby";
-// @ts-ignore
 import { useLocalization } from "gatsby-theme-i18n";
 import { Helmet } from "react-helmet";
 import { defineMessages, useIntl } from "react-intl";
@@ -80,7 +79,12 @@ const Home = () => {
               component={Link}
               disabled={locale === "en"}
               size="small"
-              to={localizedPath({ defaultLang, locale: "en", path: "/" })}
+              to={localizedPath({
+                defaultLang,
+                locale: "en",
+                path: "/",
+                prefixDefault: undefined,
+              })}
             >
               EN
             </Button>
@@ -89,7 +93,12 @@ const Home = () => {
               component={Link}
               disabled={locale === "ru"}
               size="small"
-              to={localizedPath({ defaultLang, locale: "ru", path: "/" })}
+              to={localizedPath({
+                defaultLang,
+                locale: "ru",
+                path: "/",
+                prefixDefault: undefined,
+              })}
             >
               RU
             </Button>
@@ -101,10 +110,10 @@ const Home = () => {
           gutterBottom
           variant="h1"
         >
-          {formatMessage(messages.title)}
+          {title}
         </Typography>
         <Typography align="center" gutterBottom>
-          {title}
+          {formatMessage(messages.description)}
         </Typography>
 
         <Box mt={4} textAlign="center">
