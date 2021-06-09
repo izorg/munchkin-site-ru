@@ -1,27 +1,23 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { GlobalStyles, Typography, useTheme } from "@material-ui/core";
 import { Helmet } from "react-helmet";
 
 const displayName = "PrivacyPolicy";
 
-const useStyles = makeStyles(
-  (theme) => ({
-    "@global": {
-      body: {
-        padding: theme.spacing(0, 2),
-      },
-    },
-  }),
-  { name: displayName }
-);
-
 const PrivacyPolicy = () => {
-  useStyles();
+  const theme = useTheme();
 
   return (
     <>
       <Helmet>
         <title>Privacy Policy</title>
       </Helmet>
+      <GlobalStyles
+        styles={{
+          body: {
+            padding: theme.spacing(0, 2),
+          },
+        }}
+      />
       <Typography component="div">
         <h2>Privacy Policy</h2>
         <p>

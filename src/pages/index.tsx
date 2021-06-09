@@ -3,9 +3,10 @@ import {
   Box,
   Button,
   Container,
+  GlobalStyles,
   Link as MuiLink,
-  makeStyles,
   SvgIcon,
+  Theme,
   Toolbar,
   Typography,
 } from "@material-ui/core";
@@ -39,28 +40,8 @@ const messages = defineMessages({
   },
 });
 
-const useStyles = makeStyles(
-  (theme) => ({
-    "@global": {
-      "@font-face": {
-        fontFamily: "Munchkin",
-        src: "url(/fonts/munchkin.woff2) format('woff2'), url(/fonts/munchkin.woff) format('woff')",
-        fontWeight: "normal",
-        fontStyle: "normal",
-      },
-    },
-
-    title: {
-      fontFamily: `"Munchkin", ${theme.typography.fontFamily}`,
-    },
-  }),
-  { name: displayName }
-);
-
 const Home = () => {
   const { formatMessage } = useIntl();
-
-  const classes = useStyles();
 
   const { defaultLang, locale, localizedPath } = useLocalization();
 
@@ -71,6 +52,16 @@ const Home = () => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
+      <GlobalStyles
+        styles={{
+          "@font-face": {
+            fontFamily: "Munchkin",
+            src: "url(/fonts/munchkin.woff2) format('woff2'), url(/fonts/munchkin.woff) format('woff')",
+            fontWeight: "normal",
+            fontStyle: "normal",
+          },
+        }}
+      />
       <Container>
         <AppBar color="transparent" elevation={0} position="static">
           <Toolbar component={Box} justifyContent="flex-end">
@@ -106,8 +97,11 @@ const Home = () => {
         </AppBar>
         <Typography
           align="center"
-          className={classes.title}
           gutterBottom
+          sx={{
+            fontFamily: (theme: Theme) =>
+              `"Munchkin", ${theme.typography.fontFamily}`,
+          }}
           variant="h1"
         >
           {title}
