@@ -21,22 +21,22 @@ const displayName = "Home";
 const messages = defineMessages({
   description: {
     id: "home.description",
-    defaultValue: "Simple but powerful Munchkin level counter",
+    defaultMessage: "Simple but powerful Munchkin level counter",
   },
 
   privacy: {
     id: "home.privacy",
-    defaultValue: "Privacy Policy",
+    defaultMessage: "Privacy Policy",
   },
 
   title: {
     id: "home.title",
-    defaultValue: "Munchkin Level Counter",
+    defaultMessage: "Munchkin Level Counter",
   },
 
   try: {
     id: "home.try",
-    defaultValue: "Try",
+    defaultMessage: "Try",
   },
 });
 
