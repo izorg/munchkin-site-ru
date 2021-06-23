@@ -1,8 +1,6 @@
 import { GlobalStyles, Typography, useTheme } from "@material-ui/core";
 import { Helmet } from "react-helmet";
 
-const displayName = "PrivacyPolicy";
-
 const PrivacyPolicy = () => {
   const theme = useTheme();
 
@@ -178,7 +176,5 @@ const PrivacyPolicy = () => {
     </>
   );
 };
-
-PrivacyPolicy.displayName = displayName;
 
 export default PrivacyPolicy;

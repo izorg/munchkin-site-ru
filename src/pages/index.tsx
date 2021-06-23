@@ -16,8 +16,6 @@ import { useLocalization } from "gatsby-theme-i18n";
 import { Helmet } from "react-helmet";
 import { defineMessages, useIntl } from "react-intl";
 
-const displayName = "Home";
-
 const messages = defineMessages({
   description: {
     id: "home.description",
@@ -176,7 +174,5 @@ const Home = () => {
     </>
   );
 };
-
-Home.displayName = displayName;
 
 export default Home;
