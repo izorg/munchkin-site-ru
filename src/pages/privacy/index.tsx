@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
       <Typography component="div">
         <h2>Privacy Policy</h2>
         <p>
-          Viacheslav Zavoruev built the Munchkin Level Counter app as a Freemium
+          Viacheslav Zavoruev built the Level Counter app as a Freemium
           app. This SERVICE is provided by Viacheslav Zavoruev at no cost and is
           intended for use as is.
         </p>
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
         </p>
         <p>
           The terms used in this Privacy Policy have the same meanings as in our
-          Terms and Conditions, which is accessible at Munchkin Level Counter
+          Terms and Conditions, which is accessible at Level Counter
           unless otherwise defined in this Privacy Policy.
         </p>
         <p>
