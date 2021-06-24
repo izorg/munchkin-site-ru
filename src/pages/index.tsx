@@ -145,7 +145,7 @@ const Home = () => {
               target="_blank"
               variant="outlined"
             >
-              Play Store
+              Google Play
             </Button>
           </Box>
           <Box
