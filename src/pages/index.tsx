@@ -10,7 +10,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { mdiApple, mdiGooglePlay } from "@mdi/js";
+import { mdiApple, mdiGooglePlay, mdiMicrosoftWindows } from "@mdi/js";
 import { Link } from "gatsby";
 import { useLocalization } from "gatsby-theme-i18n";
 import { Helmet } from "react-helmet";
@@ -118,7 +118,14 @@ const Home = () => {
           </Button>
         </Box>
 
-        <Box display="flex" justifyContent="center" marginTop={2}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginTop: 2,
+          }}
+        >
           <Box
             display="inline-flex"
             flexDirection="column"
@@ -161,6 +168,28 @@ const Home = () => {
               variant="outlined"
             >
               App Store
+            </Button>
+          </Box>
+          <Box
+            display="inline-flex"
+            flexDirection="column"
+            margin={2}
+            width={200}
+          >
+            <Button
+              color="inherit"
+              href="https://www.microsoft.com/store/apps/9PDVK4CF6NMF"
+              rel="noopener noreferrer"
+              size="large"
+              startIcon={
+                <SvgIcon style={{ marginTop: -2 }}>
+                  <path d={mdiMicrosoftWindows} />
+                </SvgIcon>
+              }
+              target="_blank"
+              variant="outlined"
+            >
+              Windows
             </Button>
           </Box>
         </Box>
