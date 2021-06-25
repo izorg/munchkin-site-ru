@@ -112,6 +112,9 @@ const Home = () => {
           <Button
             color="primary"
             href="https://web.allmunchkins.com"
+            sx={{
+              minWidth: 120,
+            }}
             variant="contained"
           >
             {formatMessage(messages.try)}
